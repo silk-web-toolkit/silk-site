@@ -1,0 +1,12 @@
+<silk xmlns="http://www.bheap.co.uk/xml/ns/silk/0.1.0">
+  <pipeline>
+    <content>site</content>
+    <serialiser>html5</serialiser>
+    <compatibility></compatibility>
+  </pipeline>
+  <!--<pipeline>
+    <content>service</content>
+    <serialiser>json</serialiser>
+    <compatibility></compatibility>
+  </pipeline>-->
+</silk>
