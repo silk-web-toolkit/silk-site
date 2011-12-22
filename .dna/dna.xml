@@ -1,6 +1,0 @@
-<site-prototype xmlns="http://www.bheap.co.uk/resource/xml/ns/silk/site-prototype/0.1.0">
-  <silk-version>0.1.0</silk-version>
-  <package>com.bheap.silk</package>
-  <id>default-basic</id>
-  <description>A default silk core prototype site, provides a basic example of each element of a site.</description>
-</site-prototype>
