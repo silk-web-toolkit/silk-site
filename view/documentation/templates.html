@@ -17,16 +17,23 @@
           Most sites have at least one template, with a design including headers, footers, navigation etc.  This is where we start.  In your generated Silk site under 'template' there is a default template prepared for you called 'default.html'.  As indicated by its extension and mime-type this template is for html views.
         </p>
 
-        <p>
-          Do whatever you like in here as long as it is valid xhtml *and* contains a div tag with id 'silk-template'.
-        </p>
+        <p>Below is a simple example of a template.</p>
+
+<pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Sample template&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="silk-template"&gt;
+      Content will go here
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
 
         <p>
-          The content of your individual views will be written into this div tag by our template mix in tool.
-        </p>
-
-        <p>
-				  Note, if you don't want templates, you don't have to use them, just build your views in a little more detail :-)
+          Templates are required to be valid xhtml and should contain a div element with id 'silk-template' if you want any views to be mixed in later.
         </p>
       </section>
     </div>
