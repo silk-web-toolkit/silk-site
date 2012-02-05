@@ -30,6 +30,7 @@ are relative to the cache manifest file (or absolute).
 ./getting-started.html
 ./release-notes.html
 ./silk-info.html
+./team.html
 ./documentation/index.html
 ./documentation/components.html
 ./documentation/pipelines.html
