@@ -6,20 +6,23 @@
     <title>Silk Web Toolkit</title>
     <link rel="stylesheet/less" href="resource/less/bootstrap.less"></link>
     <link rel="stylesheet/less" href="resource/less/silk.less"></link>
-    <script type="text/javascript" src="resource/js/less-1.1.5.min.js"></script>
+    <script type="text/javascript" src="resource/js/less-1.2.1.min.js"></script>
     <script type="text/javascript" src="resource/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="resource/js/bootstrap-dropdown.js"></script>
   </head>
   <body>
 
-    <div class="topbar" data-dropdown="dropdown" >
-      <div class="topbar-inner">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="index.html#">Silk Web Toolkit</a>
           <ul class="nav">
             <li><a href="getting-started.html">Getting started</a></li>
             <li class="dropdown">
-              <a href="documentation/index.html" class="dropdown-toggle">Documentation</a>
+              <a href="documentation/index.html" class="dropdown-toggle" data-toggle="dropdown">
+                Documentation
+                <b class="caret"></b>
+              </a>
               <ul class="dropdown-menu">
                 <li><a href="documentation/index.html">Big picture</a></li>
                 <li><a href="documentation/pipelines.html">Pipelines</a></li>
@@ -34,7 +37,7 @@
             <li><a href="community.html">Community</a></li>
             <li><a href="team.html">Team</a></li>
           </ul>
-          <p class="pull-right"><a href="http://www.bheap.co.uk" target="_blank">By Bheap Ltd</a></p>
+          <p class="navbar-text pull-right"><a href="http://www.bheap.co.uk" target="_blank">By Bheap Ltd</a></p>
         </div>
       </div>
     </div>
@@ -43,6 +46,10 @@
       <div id="silk-template">
         Content will go here
       </div>
+    </div>
+
+    <div class="container">
+      <hr />
     </div>
 
     <div class="container">
