@@ -18,7 +18,7 @@ cache manifest, ALL of the files are re-downloaded.
 
 It seems logical to use a VCS latest revision or commit.
 --->
-# Cache Manifest Version: bc358b5
+# Cache Manifest Version: 6e1b96f
  
 <!---
 Let's list the file that get cached. The URLs to these files
