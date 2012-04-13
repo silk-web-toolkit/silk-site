@@ -1,0 +1,91 @@
+<html>
+  <body>
+    <div id="silk-view">
+
+      <ul class="breadcrumb">
+			  <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+			</ul>
+
+      <section id="templates">
+        <div class="page-header">
+          <h1>CLI draft specification 0.1.0</h1>
+        </div>
+
+        <h2>The Problem</h2>
+        <ul>
+          <li>Package and silk-version is hard coded for clone so only works with com.silkyweb version 0.1.0</li>
+        </ul>
+
+        <h2>The Solution</h2>
+        <p>
+         Find projects by their project ID. If multiple exist, in different packages, get the user to pick the package they desired. 
+        </p>
+        <p>
+          Try and auto match the locally installed silk version with the current projects silk-version. If an exact match is not found use the closest version but warn the user. If a newer version is found warn the user.
+        </p>
+        <p>
+          User case 1 - aaaaaaaaaaaaaaaaaa does not exist   
+        </p>
+<pre>
+silk clone-site aaaaaaaaaaaaaaaaaa
+
+Version : 0.1.0
+Sorry, no artifact found with that id
+</pre>
+
+        <p>
+          User case 2 - default-basic is found in org.silkyweb only with a version of  
+        </p>
+<pre>
+silk clone-site default-basic  
+
+Version : 0.1.0
+Silk site-prototype : default-basic clone complete
+</pre>
+        <p>
+          User case 3 - default-basic is found in org.silkyweb and com.my-domain  
+        </p>
+<pre>
+silk clone-site default-basic  
+
+Version : 0.1.0
+
+The following packages exist for artifact 'default-basic'
+	 1) org.silkyweb
+	 2) com.my-domain
+
+Please specify the number of the package you wish to clone: 2
+Silk site-prototype : default-basic clone complete
+</pre>
+        <p>
+          User case 4 - my-site is found in com.my-domain but only for an old silk version. 
+        </p>
+<pre>
+silk clone-site my-site
+
+Version : 0.2.0
+
+WARNING: 'my-site' was constructed with silk version 0.1.0
+Do you still wish to clone: Y
+Silk site-prototype : my-site clone complete
+</pre>
+        <p>
+          User case 5 - my-site is found in com.my-domain but my current version of silk is old. 
+        </p>
+<pre>
+silk clone-site my-site
+
+Version : 0.1.0
+
+WARNING: This artifact was built with a new version (0.2.0) of silk than yours. Please get the latest version from http://www.silkyweb.org.
+Do you still wish to clone: Y
+ 1) 0.1.0
+ 2) 0.2.0
+Please select the number which you wish to clone from : 2  
+
+Silk site-prototype : my-site clone complete
+</pre>
+      </section>
+    </div>
+  </body>
+</html>
