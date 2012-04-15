@@ -17,7 +17,13 @@
         </div>
 
         <p>
-          Most sites have at least one template, with a design including headers, footers, navigation etc.  This is where we start.  In your generated Silk site under 'template' there is a default template prepared for you called 'default.html'.  As indicated by its extension and mime-type this template is for html views.
+          Most sites have at least one template, with design elements including headers, footers, navigation etc.  This is where we start.
+        </p>
+        <p>
+          With the default and most common <a href="documentation/pipelines.html">pipeline</a> templates are required to be valid xhtml and should contain a div element with id 'silk-template' if you want any views to be mixed in later.
+        </p>
+        <p>
+          If you have cloned a <a href="documentation/site-prototypes.html">site prototype</a>, and you are working with the default Silk pipeline there is a good chance that there is a default template prepared for you called 'default.html' under the 'template' directory.  This template is automatically wrapped around any view which does not specify a particular template at spin time.  If a given view does not specify a template, and the default.html template is not present in your project Silk will wrap a standard 'template-missing' template around your view.
         </p>
 
         <p>Below is a simple example of a template.</p>
@@ -36,8 +42,17 @@
 </pre>
 
         <p>
-          Templates are required to be valid xhtml and should contain a div element with id 'silk-template' if you want any views to be mixed in later.
+          It is also possible as we mentioned above to specify which template should be wrapped around a view.  This gives us greater flexibility in composing sites.  If the template you specify does not exist locally, Silk will look at core templates, to see if the template exists there.  If this lookup fails once again the core 'template-missing' template is wrapped around your view.  Below is an example of specifying a template.
         </p>
+
+<pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="template" content="template.html"&gt;
+  &lt;/head&gt;
+  ...
+&lt;/html&gt;
+</pre>
       </section>
     </div>
   </body>
