@@ -93,7 +93,23 @@
         </div>
 
         <p>
-          Lorem ipsum.
+         Why a microformat ?  Couldn't this problem be solved in an easier way ?  Definitely it could.  However we think this could be useful in other contexts via consumers that could build sitemaps for your Silk project and other projects completely non Silk related.  We like to give back :-)
+        </p>
+
+        <p>
+          We will not go so far as to create the specification here but we will broadly examine whether it is feasible.
+        </p>
+
+        <p>
+          The <a href="http://www.sitemaps.org/protocol.html">sitemap</a> protocol is well understood at this point.  We will initially look at implementing only parts of it.
+        </p>
+
+        <p>
+          We believe it would be relatively easy to declare 'priority' and 'changefreq' by leveraging existing attributes on elements of a nav component.  The 'loc' information is of course already conveniently in place in the href attributes.  The optional 'lastmod' information is more of a problem for a number of reasons.  We will choose to merrily ignore that for the scope of this proposal.
+        </p>
+
+        <p>
+          To summarise we are solving three problems with one construct (a POSH nav component) and a sprinkling of semantic markup leveraging elements and attributes we already know and love.  HTML FTW!
         </p>
       </section>
     </div>
