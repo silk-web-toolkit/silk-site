@@ -7,22 +7,41 @@
 
       <ul class="breadcrumb">
 			  <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+        <li><a href="specs/index.html">Specifications</a> <span class="divider">/</span></li>
+        <li class="active">CLI</li>
 			</ul>
 
-      <section id="templates">
+      <header class="jumbotron subhead" id="overview">
+        <h1>
+          CLI spec 0.1.0
+          <small>Nick Featch</small>
+        </h1>
+        <p class="lead">
+          The CLI is the initial interface through which interaction with Silk occurs.
+        </p>
+      </header>
+
+      <section id="problem">
         <div class="page-header">
           <h1>
-            CLI draft specification 0.1.0
-            <small>Nick Featch</small>
+            The Problem
+            <small>Describes the problem we are trying to fix</small>
           </h1>
         </div>
 
-        <h2>The Problem</h2>
         <p>
           Package and silk-version is hard coded for clone so only works with com.silkyweb version 0.1.0
         </p>
+      </section>
 
-        <h2>The Solution</h2>
+      <section id="solution">
+        <div class="page-header">
+          <h1>
+            The Solution
+            <small>Describes the solution we propose</small>
+          </h1>
+        </div>
+
         <h3>Packages</h3>
         <p>
          Find projects by their project ID. If multiple exist, in different packages, get the user to pick the package they desired. 
