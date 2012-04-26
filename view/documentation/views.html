@@ -21,13 +21,13 @@
         </p>
 
         <p>
-				  In Silk all views will render independently from the template... <span class="label label-info">everything</span> is designer friendly.  Start with valid html and body elements, then ensure everything you want to be pulled in as the view is inside a div element with id 'silk-view'.
+				  In Silk all views will render independently from the template... <span class="label label-info">everything</span> is designer friendly.  Start with valid 'html' and 'body' elements, then it is best to have some container element as a root inside of the 'body' element.
         </p>
 
 <pre>
   &lt;html&gt;
     &lt;body&gt;
-      &lt;div id="silk-view"&gt;
+      &lt;div&gt;
         &lt;p&gt;This is the content for the view&lt;p&gt;
       &lt;/div&gt;
     &lt;/body&gt;
