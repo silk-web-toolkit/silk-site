@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta name="template" content="proposals" />
+  </head>
+  <body>
+    <div id="silk-view">
+
+      <ul class="breadcrumb">
+			  <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+        <li><a href="proposals/index.html">Proposals</a> <span class="divider">/</span></li>
+        <li class="active">Parameterised Components</li>
+			</ul>
+
+      <header class="jumbotron subhead" id="overview">
+        <h1>
+          Parameterised Components
+          <small>Barrie McGuire</small>
+        </h1>
+        <p class="lead">
+          A proposal on how to provide a more flexible component model which promotes greater re-use of code by allowing substitution of user-defined parameters.  
+        </p>
+      </header>
+
+      <section id="problem">
+        <div class="page-header">
+          <h1>
+            The problem
+            <small>Describes the problem we are trying to fix</small>
+          </h1>
+        </div>
+
+        <p>
+	        Static components in their current incarnation are limited in their usefulness as they require absolute structure and content.  They are not useful in situations where a user finds they are repeating 95% of a block of HTML numerous times; with only a tiny delta difference of content, and perhaps structure, changing.
+	      </p>
+	
+	      <p>
+		      Imagine the following scenario - you are writing a news orientated site which has a main page that contains a list of bulletins.  These bulletins consist of a headline, an image, a date, an author and a brief summary.  Your HTML might look something like this:
+		    </p>
+	      <pre>
+  &lt;div id="bulletins"&gt;
+
+    &lt;div class="bulletin"&gt;
+      &lt;div class="left-columnn"&gt;
+        &lt;img src="images/flight.jpg" alt="flight"/&gt;
+      &lt;/div&gt;
+      &lt;div class="right-column"&gt;
+        &lt;h3>Plane makes maiden flight&lt;/h3&gt;
+        &lt;span class="date">17/12/1903&lt;/span&gt;
+        &lt;span class="author">Flipper Jefferson&lt;/span&gt;
+        &lt;p&gt;
+          The Wrong brothers have today taken flight in an epically awesome spectacle, the level of 
+          flapping was the likes of which the world has never seen.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="bulletin"&gt;
+      &lt;div class="left-columnn"&gt;
+        &lt;img src="images/goat.jpg" alt="goat"/&gt;
+      &lt;/div&gt;
+      &lt;div class="right-column"&gt;
+        &lt;h3>Goat walks up dam&lt;/h3&gt;
+        &lt;span class="date">21/03/2011&lt;/span&gt;
+        &lt;span class="author">Munchkin Jones&lt;/span&gt;
+        &lt;p&gt;
+          In a quaint village in northern Italy a small Bovidae has utterly perplexed the quizzical residents     
+          by scaling the whizz popping heights of the local dam.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    etc... 
+  &lt;/div&gt;
+		    </pre>
+		
+		    <p>It is very difficult to see the wood for the trees - the article's content is lost within the structure and styling even in this very simplistic example.  This problem will also exponentially increase as more and more stories are added, and the code will become difficult to maintain.</p>
+      </section>
+
+      <section id="solution">
+        <div class="page-header">
+          <h1>
+            The solution
+            <small>Describes the solution we propose</small>
+          </h1>
+        </div>
+
+        <p>We currently have a basic component mechanism in Silk which allows reuse of static blocks of HTML, given our example above such a mechanism would not offer us much help.  What we need is a way of specifying the general structure of a re-useable block of HTML, in a way that enables us to 'override' some elements on a case-by-case basis.  This is where parameterised components come in.</p>
+
+      </section>
+
+      <section id="approach">
+        <div class="page-header">
+          <h1>
+            The approach
+            <small>Describes the details of our solution</small>
+          </h1>
+        </div>
+
+        <p>Imagine we could create a component and using pure HTML mark some elements as placeholders, which could be overridden further down the pipeline.  An example of one implementation of this could be as follows:</p>
+
+         <pre>
+  &lt;div id="silk-component:bulletin" class="bulletin"&gt;
+    &lt;div class="left-column"&gt;
+      &lt;img id="image" /&gt;
+    &lt;/div&gt;
+    &lt;div class="right-column"&gt;
+      &lt;h3 id="title" /&gt;
+      &lt;span id="date" class="date" /&gt;
+      &lt;span id="author" class="author" /&gt;
+      &lt;p id="summary" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;	
+	       </pre>   
+	 
+	       <p>This would allow us to re-use this HTML, but substitute or override the elements whenever we include it our view.  Lets take a look at our example of the news site using the new parameterised component approach:</p>
+	
+	       <pre>
+  &lt;div id="bulletins"&gt;
+
+    &lt;div id="silk-component:bulletin"&gt;
+      &lt;img id="image" src="images/flight.jpg" alt="flight"/&gt;
+      &lt;h3 id="title">Plane makes maiden flight&lt;/h3&gt;
+      &lt;span id="date">17/12/1903&lt;/span&gt;
+      &lt;span id="author">Flipper Jefferson&lt;/span&gt;
+      &lt;p id="summary"&gt;
+        The Wrong brothers have today taken flight in an epically awesome spectacle, the level of 
+        flapping was the likes of which the world has never seen.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div id="silk-component:bulletin"&gt;
+      &lt;img id="image" src="images/goat.jpg" alt="goat"/&gt;
+      &lt;h3 id="title">Goat walks up dam&lt;/h3&gt;
+      &lt;span id="date">21/03/2011&lt;/span&gt;
+      &lt;span id="author">Munchkin Jones&lt;/span&gt;
+      &lt;p id="summary"&gt; 
+        In a quaint village in northern Italy a small Bovidae has utterly perplexed the quizzical residents     
+        by scaling the whizz popping heights of the local dam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    etc... 
+  &lt;/div&gt;
+		     </pre>
+		
+		     <p>Although not massively obvious in this very simple example the code here is still much easier to read - although you can imagine this really coming into it's own with more complex sites.  It should also be noted that use of 'id' attributes to denote variables is by no means concrete and is merely used to illustrate the concept.</p>
+      </section>
+    </div>
+  </body>
+</html>
