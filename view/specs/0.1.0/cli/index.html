@@ -24,8 +24,8 @@
       <section id="problem">
         <div class="page-header">
           <h1>
-            The Problem
-            <small>Describes the problem we are trying to fix</small>
+            Problem 1
+            <small>Describes a clone problem we are trying to fix</small>
           </h1>
         </div>
 
@@ -38,7 +38,7 @@
         <div class="page-header">
           <h1>
             The Solution
-            <small>Describes the solution we propose</small>
+            <small>Describes the solution we propose for problem 1</small>
           </h1>
         </div>
 
@@ -111,6 +111,85 @@ Do you still wish to clone: Y
 Please select the number which you wish to clone from : 2  
 
 Silk site-prototype : my-site clone complete
+</pre>
+      </section>
+      <header class="jumbotron subhead" id="overview">
+        <h1>
+          CLI spec 0.1.0
+          <small>Nick Featch</small>
+        </h1>
+        <p class="lead">
+          The CLI is the initial interface through which interaction with Silk occurs.
+        </p>
+      </header>
+
+      <section id="problem">
+        <div class="page-header">
+          <h1>
+            Problem 2
+            <small>Describes an install problem we are trying to fix</small>
+          </h1>
+        </div>
+
+        <p>
+          Installing artifacts is deemed too risky since you could accidentally overwrite an artifact you wish to keep. It puts too much empathise on the user to ensure they config file is correct.  
+        </p>
+      </section>
+
+      <section id="solution">
+        <div class="page-header">
+          <h1>
+            The Solution
+            <small>Describes the solution we propose for problem 2</small>
+          </h1>
+        </div>
+
+        <p>If a locally installed artifact has a matching package and id. Prompts should be displayed, for each, to ensure the config file has been correctly maintained. Changes will update the config before installing.</p>
+
+        <p>
+          User case 1 - user is installing a new site with unique package + id
+        </p>
+<pre>
+silk install-site
+
+Version : 0.1.0-SNAPSHOT
+package is : org.mycompany
+silk version is : 0.1.0
+Silk site-prototype : new-project install complete
+</pre>
+
+        <p>
+          User case 2 - user installs a site they cloned from default-basic and did not change the config file
+        </p>
+<pre>
+silk install-site
+
+Version : 0.1.0-SNAPSHOT
+[WARNING] This will overwrite a local Silk site. You may wish to change the following values.
+[WARNING] Package: com.silkyweb      ---- user changes to 'com.mycompany' and hits enter
+[WARNING] ID: default-clone          ---- user changes to 'new-project' and hits enter
+[WARNING] Description: A default ... ---- User changes to 'some description' and hits enter
+
+package is : org.mycompany
+silk version is : 0.1.0
+Silk site-prototype : new-project install complete
+</pre>
+
+        <p>
+          User case 3 - user modifies a local Silk site and wishes to keep config settings the same
+        </p>
+<pre>
+silk install-site
+
+Version : 0.1.0-SNAPSHOT
+[WARNING] This will overwrite a local Silk site. You may wish to change the following values.
+[WARNING] Package: com.myproject        ---- user leaves as is and hits enter
+[WARNING] ID: new-project               ---- user leaves as is and hits enter
+[WARNING] Description: some description ---- User leaves as is and hits enter
+
+package is : org.mycompany
+silk version is : 0.1.0
+Silk site-prototype : new-project install complete
 </pre>
       </section>
     </div>
