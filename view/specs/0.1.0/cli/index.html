@@ -51,7 +51,7 @@
           Try and auto match the locally installed silk version with the current projects silk-version. If an exact match is not found use the closest version but warn the user. If a newer version is found warn the user.
         </p>
         <p>
-          User case 1 - aaaaaaaaaaaaaaaaaa does not exist   
+          Use case 1 - aaaaaaaaaaaaaaaaaa does not exist   
         </p>
 <pre>
 silk clone-site aaaaaaaaaaaaaaaaaa
@@ -61,7 +61,7 @@ Sorry, no artifact found with that id
 </pre>
 
         <p>
-          User case 2 - default-basic is found in org.silkyweb only with a version of  
+          Use case 2 - default-basic is found in org.silkyweb only with a version of  
         </p>
 <pre>
 silk clone-site default-basic  
@@ -70,7 +70,7 @@ Version : 0.1.0
 Silk site-prototype : default-basic clone complete
 </pre>
         <p>
-          User case 3 - default-basic is found in org.silkyweb and com.my-domain  
+          Use case 3 - default-basic is found in org.silkyweb and com.my-domain  
         </p>
 <pre>
 silk clone-site default-basic  
@@ -85,7 +85,7 @@ Please specify the number of the package you wish to clone: 2
 Silk site-prototype : default-basic clone complete
 </pre>
         <p>
-          User case 4 - my-site is found in com.my-domain but only for an old silk version. 
+          Use case 4 - my-site is found in com.my-domain but only for an old silk version. 
         </p>
 <pre>
 silk clone-site my-site
@@ -97,7 +97,7 @@ Do you still wish to clone: Y
 Silk site-prototype : my-site clone complete
 </pre>
         <p>
-          User case 5 - my-site is found in com.my-domain but my current version of silk is old. 
+          Use case 5 - my-site is found in com.my-domain but my current version of silk is old. 
         </p>
 <pre>
 silk clone-site my-site
@@ -138,7 +138,7 @@ Silk site-prototype : my-site clone complete
         <p>If a locally installed artifact has a matching package and id. Prompts should be displayed, for each, to ensure the config file has been correctly maintained. Changes will update the config before installing.</p>
 
         <p>
-          User case 1 - user is installing a new site with unique package + id
+          Use case 1 - user is installing a new site with unique package + id
         </p>
 <pre>
 silk install-site
@@ -150,7 +150,7 @@ Silk site-prototype : new-project install complete
 </pre>
 
         <p>
-          User case 2 - user installs a site they cloned from default-basic and did not change the config file
+          Use case 2 - user installs a site they cloned from default-basic and did not change the config file
         </p>
 <pre>
 silk install-site
