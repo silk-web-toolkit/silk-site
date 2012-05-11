@@ -61,7 +61,7 @@ Sorry, no artifact found with that id
 </pre>
 
         <p>
-          Use case 2 - default-basic is found in org.silkyweb only with a version of  
+          Use case 2 - default-basic is found in org.silkyweb only and matches the current silk version  
         </p>
 <pre>
 silk clone-site default-basic  
@@ -161,26 +161,112 @@ Version : 0.1.0-SNAPSHOT
 [WARNING] ID: default-clone          ---- user changes to 'new-project' and hits enter
 [WARNING] Description: A default ... ---- User changes to 'some description' and hits enter
 
+You entered the following details
+Package: com.mycompany
+ID: new-projects
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'Y' and hits enter
+
 package is : org.mycompany
 silk version is : 0.1.0
 Silk site-prototype : new-project install complete
 </pre>
 
         <p>
-          User case 3 - user modifies a local Silk site and wishes to keep config settings the same
+          Use case 3 - user installs a site they cloned from (same as user case 2) but makes a mistake
         </p>
 <pre>
 silk install-site
 
 Version : 0.1.0-SNAPSHOT
 [WARNING] This will overwrite a local Silk site. You may wish to change the following values.
-[WARNING] Package: com.myproject        ---- user leaves as is and hits enter
-[WARNING] ID: new-project               ---- user leaves as is and hits enter
-[WARNING] Description: some description ---- User leaves as is and hits enter
+[WARNING] Package: com.silkyweb      ---- user changes to 'com.mycompany' and hits enter
+[WARNING] ID: default-clone          ---- user changes to 'new-pr' and hits enter
+[WARNING] Description: A default ... ---- User changes to 'some description' and hits enter
+
+You entered the following details
+Package: com.mycompany
+ID: new-pr
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'N' and hits enter
+
+Please amend the following details
+[WARNING] Package: com.mycompany     ---- user leaves as is and hits enter
+[WARNING] ID: new-pr                 ---- user changes to 'new-project' and hits enter
+[WARNING] Description: A default ... ---- User leaves as is and hits enter
+
+You entered the following details
+Package: com.mycompany
+ID: new-project
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'Y' and hits enter
 
 package is : org.mycompany
 silk version is : 0.1.0
 Silk site-prototype : new-project install complete
+</pre>
+
+        <p>
+          User case 4 - user modifies a local Silk site and wishes to keep config settings the same
+        </p>
+<pre>
+silk install-site
+
+Version : 0.1.0-SNAPSHOT
+[WARNING] This will overwrite a local Silk site. You may wish to change the following values.
+[WARNING] Package: com.mycompany        ---- user leaves as is and hits enter
+[WARNING] ID: new-project               ---- user leaves as is and hits enter
+[WARNING] Description: some description ---- User leaves as is and hits enter
+
+You entered the following details
+Package: com.mycompany
+ID: new-project
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'Y' and hits enter
+
+package is : org.mycompany
+silk version is : 0.1.0
+Silk site-prototype : new-project install complete
+</pre>
+
+        <p>
+          User case 5 - user wishes to rename the site but picks an existing project
+        </p>
+<pre>
+silk install-site
+
+Version : 0.1.0-SNAPSHOT
+[WARNING] This will overwrite a local Silk site. You may wish to change the following values.
+[WARNING] Package: com.mycompany        ---- user enters 'org.silkyweb' and hits enter
+[WARNING] ID: new-project               ---- user enters 'default-basic' and hits enter
+[WARNING] Description: some description ---- user leaves as is and hits enter
+
+You entered the following details
+Package: org.silkyweb
+ID: default-basic
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'N' and hits enter
+
+[WARNING] This will overwrite a local Silk site. You may wish to change the following values.
+[WARNING] Package: org.silkyweb         ---- user enters 'com.mycompany' and hits enter
+[WARNING] ID: default-basic             ---- user enters 'renamed-project' and hits enter
+[WARNING] Description: some description ---- user leaves as is and hits enter
+
+You entered the following details
+Package: com.mycompany
+ID: renamed-project
+Description: some description
+
+Do wish to clone with these details(Y/N):   ---- user enters 'Y' and hits enter
+
+package is : org.mycompany
+silk version is : 0.1.0
+Silk site-prototype : renamed-project install complete
 </pre>
       </section>
     </div>
