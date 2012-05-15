@@ -20,7 +20,7 @@
           Most sites have at least one template, with design elements including headers, footers, navigation etc.  This is where we start.
         </p>
         <p>
-          With the default and most common <a href="documentation/pipelines.html">pipeline</a> templates are required to be valid xhtml and should contain a div element with id 'silk-view' if you want any views to be mixed in later.
+          With the default and most common <a href="documentation/pipelines.html">pipeline</a> templates are required to be valid xhtml and should contain a div element with id 'silk-view' if you want any views to be mixed in later.  Apart from this requirement, any content can be placed inside the 'body' element, including multiple container elements.
         </p>
         <p>
           If you have cloned a <a href="documentation/site-prototypes.html">site prototype</a>, and you are working with the default Silk pipeline there is a good chance that there is a default template prepared for you called 'default.html' under the 'template' directory.  This template is automatically wrapped around any view which does not specify a particular template at spin time.  If a given view does not specify a template, and the default.html template is not present in your project Silk will wrap a standard 'template-missing' template around your view.
@@ -34,8 +34,14 @@
     &lt;title&gt;Sample template&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
+    &lt;div&gt;
+      Some header content
+    &lt;/div&gt;
     &lt;div id="silk-view"&gt;
-      Content will go here
+      View content will be inserted here
+    &lt;/div&gt;
+    &lt;div&gt;
+      Some footer content
     &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
