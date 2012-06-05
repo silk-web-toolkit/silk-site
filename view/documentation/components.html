@@ -20,6 +20,8 @@
           Components provide a means to build sites out of reusable lego like blocks of content.  Your Silk generated site may have an example of a component.  Both templates and views can call in components.
         </p>
 
+        <h2>Anatomy of a component</h2>
+
         <p>
           Again components start with a valid 'html' and 'body' element.  It is best then to have one top level container element inside the 'body' element.  It is this content that will be injected where the component is invoked.  Below is an example of a static component called 'sample'.
         </p>
@@ -34,8 +36,20 @@
 &lt;/html&gt;
         </pre>
 
+        <h2>Types of component</h2>
+
         <p>
-          Below is an example of what you would declare in a view or template to pull in a component.
+          There are three different types of component; local, core (in a specified package) and core org.silkyweb (those shipped with Silk out of the box).
+        </p>
+
+        <ul>
+          <li>Local to the project (found in any Silk project under the 'components' directory) - always your components</li>
+          <li>Local repository within a specific package (in core silk) - may be your components, may be other companies'</li>
+          <li>Local repository within org.silkyweb (distributed with Silk)</li>
+        </ul>
+
+        <p>
+          Below is an example of what you would declare in a view or template to pull in a component local to the project.
         </p>
 
         <div id="silk-component:static/sample">
@@ -53,6 +67,14 @@
         <div id="silk-component:static/actual">
           Placeholder for static actual component
         </div>
+
+        <p>
+          To pull in a component in your own package in the local repository the id attribute might be something like: 'silk-component:com/mycompany/simple-address'.
+        </p>
+
+        <p>
+          The rules for component lookup are simple.  If a component is not found locally, Silk will look for the specified path treating it as a package hierarchy in the local repository.  If lookup fails again, the component is searched for under the default package 'org.silkyweb' in the local repository.  Finally, if the requested component does not exist under the default package, the 'component-missing' component is inserted into your view or template.
+        </p>
       </section>
     </div>
   </body>
