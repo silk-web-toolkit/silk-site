@@ -17,13 +17,13 @@
         </div>
 
         <p>
-          Most sites have at least one template, with design elements including headers, footers, navigation etc.  This is where we start.
+          Most sites have at least one template, with design elements including headers, footers, navigation etc.  This is where we start.  See the sample Silk site for an example template.
         </p>
         <p>
-          With the default and most common <a href="documentation/pipelines.html">pipeline</a> templates are required to be valid xhtml and should contain a div element with id 'silk-view' if you want any views to be mixed in later.  Apart from this requirement, any content can be placed inside the 'body' element, including multiple container elements.
+          Templates should contain a div element with id 'silk-view' if you want any views to be mixed in later.  Apart from this requirement, any content can be placed inside the 'body' element, including multiple container elements.
         </p>
         <p>
-          If you have cloned a <a href="documentation/site-prototypes.html">site prototype</a>, and you are working with the default Silk pipeline there is a good chance that there is a default template prepared for you called 'default.html' under the 'template' directory.  This template is automatically wrapped around any view which does not specify a particular template at spin time.  If a given view does not specify a template, and the default.html template is not present in your project Silk will wrap a standard 'template-missing' template around your view.
+          We specify templates in our views, in the head element with meta tags.  If no template is specified then a 'default.html' will be used which must exist in the templates directory.
         </p>
 
         <p>Below is a simple example of a template.</p>
@@ -46,14 +46,6 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-
-        <p>
-          It is also possible as we mentioned above to specify which template should be wrapped around a view.  This gives us greater flexibility in composing sites.  If the template you specify does not exist locally, Silk will look at core templates, to see if the template exists there.  If this lookup fails once again the core 'template-missing' template is wrapped around your view.  Below is an example of specifying a template.
-        </p>
-
-        <div id="silk-component:static/specific-template-sample">
-          Placeholder for specific template example
-        </div>
       </section>
     </div>
   </body>

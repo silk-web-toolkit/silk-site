@@ -17,7 +17,7 @@
         </div>
 
         <p>
-          Components provide a means to build sites out of reusable lego like blocks of content.  Your Silk generated site may have an example of a component.  Both templates and views can call in components.
+          Components provide a means to build sites out of reusable lego like blocks of content.  See the sample Silk site for an example of a component.  Both templates and views can call in components.
         </p>
 
         <h2>Anatomy of a component</h2>
@@ -39,14 +39,19 @@
         <h2>Types of component</h2>
 
         <p>
-          There are three different types of component; local, core (in a specified package) and core org.silkyweb (those shipped with Silk out of the box).
+          There are two different types of component; local and shared.
         </p>
 
-        <ul>
-          <li>Local to the project (found in any Silk project under the 'components' directory) - always your components</li>
-          <li>Local repository within a specific package (in core silk) - may be your components, may be other companies'</li>
-          <li>Local repository within org.silkyweb (distributed with Silk)</li>
-        </ul>
+        <dl>
+          <dt>Local</dt>
+            <dd>located in a 'components' directory local to the project</dd>
+            <dd>simple to manage</dd>
+            <dd>cannot be shared</dd>
+          <dt>Shared</li>
+            <dd>Live in a separate location on your machine often managed by defining a SILK_COMPONENTS_PATH environment variable</dd>
+            <dd>managed with <a href="https://github.com/twitter/bower" title="Twitter Bower">Twitter Bower</a></dd>
+            <dd>can be shared between individuals, teams, departments or companies, using servers, Dropbox etc</dd>
+        </dl>
 
         <p>
           Below is an example of what you would declare in a view or template to pull in a component local to the project.
@@ -69,11 +74,7 @@
         </div>
 
         <p>
-          To pull in a component in your own package in the local repository the id attribute might be something like: 'silk-component:com/mycompany/simple-address'.
-        </p>
-
-        <p>
-          The rules for component lookup are simple.  If a component is not found locally, Silk will look for the specified path treating it as a package hierarchy in the local repository.  If lookup fails again, the component is searched for under the default package 'org.silkyweb' in the local repository.  Finally, if the requested component does not exist under the default package, the 'component-missing' component is inserted into your view or template.
+          The rules for component lookup are simple.  If a component is not found locally, Silk will look for it in the shared components location defined by your the SILK_COMPONENTS_PATH environment variable.
         </p>
       </section>
     </div>
