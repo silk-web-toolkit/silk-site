@@ -4,15 +4,14 @@
     <meta charset="utf-8"></meta>
     <meta name="description" content="Silk Web Toolkit" />
     <meta name="author" content="bheap, ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silk Web Toolkit</title>
-    <link rel="stylesheet/less" type="text/css" href="resource/less/bootstrap.less"></link>
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.css"></link>
     <!-- Reference microformats combined profile -->
     <link rel="profile" href="http://microformats.org/profile/specs" />
-    <script type="text/javascript" src="resource/js/less-1.2.1.min.js"></script>
-    <script type="text/javascript" src="resource/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="resource/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="resource/js/jquery.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.js"></script>
     <script type="text/javascript">
-
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-31214840-1']);
 		  _gaq.push(['_trackPageview']);
@@ -22,27 +21,22 @@
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-
 		</script>
   </head>
 
   <body>
-    <div id="silk-component:static/header">
+    <div data-sw-component="header">
       Placeholder for header
     </div>
-
     <div class="container">
-      <div id="silk-view">
+      <br/><br/><br/>
+      <div data-sw-view="">
         Content will go here
       </div>
-    </div>
 
-    <div class="container">
-      <hr />
-    </div>
-
-    <div id="silk-component:static/footer">
-      Placeholder for footer
+      <div data-sw-component="footer">
+        Placeholder for footer
+      </div>
     </div>
   </body>
 </html>

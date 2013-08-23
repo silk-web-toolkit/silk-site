@@ -1,56 +1,145 @@
 <html>
   <body>
-    <div>
-
-      <ul class="breadcrumb">
-			  <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-			  <li class="active">Getting started</li>
-			</ul>
-
-      <section id="getting-started">
-        <div class="page-header">
-          <h1>
-            Getting started
-          </h1>
-        </div>
-
-        <h3>Get Java</h3>
-        <pre>You will need a Java Runtime Environment</pre>
-        <br />
-        <br />
-
-        <h3>Get Silk</h3>
-        <a href="downloads.html" class="btn btn-primary">Get current version</a>
-        <br />
-        <br />
-
-        <h3>Install Silk</h3>
-        <pre>Install jar file as you prefer</pre>
-        <br />
-
-        <h3>Get sample Silk site</h3>
-        <a href="downloads.html" class="btn btn-primary">Get current version</a>
-        <br />
-        <br />
-
-        <h3>Install sample Silk site</h3>
-        <pre>Unpack to your preferred location</pre>
-        <br />
-
-        <h3><a href="documentation/spinning.html">Spin</a> your site</h3>
-<pre>
->cd sample-silk-site
->java -jar silk.jar spin
-</pre>
-        <pre>Note, you may need to specify the path to your silk.jar</pre>
-        <br />
-
-        <h3>View your site (OSX)</h3>
-        <pre>>open site/index.html</pre>
-        <br />
-
-        <span class="label label-success">Schweet</span>.
-      </section>
+    <div class="jumbotron">
+      <h1>Getting started</h1>
+      <p>Lets get you up and running with you first site.</p>
     </div>
+    <section id="template">
+      <div class="page-header">
+        <h1>Setup
+          <small>
+            Lets get you up and running with the 
+            <span data-sw-component="site-name"/>
+          </small>
+        </h1>
+      </div>  
+      <p>TODO One click setup</p>
+      <p>TODO Run GUI</p>
+      <p>TODO Create a new project</p>
+    </section>
+    <section id="template">
+      <div class="page-header">
+        <h1>Templates
+          <small>Structure your site once and reuse it on each page</small>
+        </h1>
+      </div>
+      </p>
+        Add the following attribute 'data-sw-view', to &lt;div&gt; tag, to 
+        specify where your views are inserted the surround it with your site 
+        contents.
+      </p>
+      <pre>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Sample Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    Some header content
+  &lt;/header&gt;
+  &lt;div data-sw-view=""&gt;
+    View content will be inserted here
+  &lt;/div&gt;
+  &lt;footer&gt;
+    Some footer content
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+    </section>
+    <section id="views">
+      <div class="page-header">
+        <h1>Views
+          <small>
+            Wrap into templates and become a page on your site
+          </small>
+        </h1>
+      </div>
+      <p>
+        This view points to a template called "example-template". If you leave 
+        the &lt;meta&gt; tag blank the <span data-sw-component="site-name" /> 
+        will look for a template called "default".
+      </p>
+<pre>
+&lt;html&gt;
+&lt;meta name="template" content="example-template" /&gt; 
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;p&gt;This is the content for the view&lt;p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    </section>
+    <section id="components">
+      <div class="page-header">
+        <h1>Components
+          <small>Contain reusable mark-up</small>
+        </h1>
+      </div>
+      <p>
+        The most basic component you may wish to create for your site maybe  
+        one containing your site name. Doing so means you can control it one 
+        place.
+      </p>
+      <p>
+        Component mark up must be placed into the components directory. 
+        Everything inside the &lt;body&gt; tag is what is inserted. The 
+        component's name is its file-name minus extension.
+      </p>
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+  &lt;span&gt;
+    My Sample Site
+  &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      <p>
+        Call the component from a template, view or another component with the 
+        following mark-up. 
+      </p>
+<pre>
+&lt;span data-sw-component="site-name"&gt;Component goes here&lt;/span &gt; 
+</pre>
+      <section id="source">
+        <h2>Source
+          <small>
+            A component attribute which specifies where to read content from
+          </small>
+        </h2>
+        <p>
+          Once configure a sourced component allows you to add contents to 
+          your site without editing the mark-up.
+        </p>
+        <p>
+          A source can be a directory in your site where you wish to draw 
+          contents. The following component call will gather contents from 
+          data/news/ inject it into components/news.html
+        </p>
+<pre>
+&lt;div data-sw-component="my-news" data-sw-source="news" /&gt; 
+</pre>
+        TODO add more
+      </section>
+    
+      <section id="views">
+        <h2>Type
+          <small>
+            A component attribute which specifies the how to render
+          </small>
+        </h2>
+        <p>
+          The default display type is flat (Non-tree). The only other type is 
+          Tree. Tree components place HTML into sub elements based on your 
+          source hierarchy structure. E.G. Directory structure.
+        </p>
+<pre>
+&lt;div data-sw-component="my-tree" data-sw-source="my-structure" data-sw-type="tree" /&gt; 
+</pre>
+        TODO add more
+      </section>
+    </section>
   </body>
 </html>
