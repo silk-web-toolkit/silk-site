@@ -21,6 +21,7 @@
               <a href="#components">Components</a>
               <ul class="nav">
                 <li><a href="#components-source">Source</a></li>
+                <li><a href="#components-details">Details Page</a></li>
                 <li><a href="#components-type">Type</a></li>
               </ul>
             </li>
@@ -44,7 +45,7 @@
         <section id="templates">
           <div class="page-header">
             <h1>Templates
-              <small>Structure your site once and reuse it on each page</small>
+              <small>Structure your site once &amp; reuse it on each page</small>
             </h1>
           </div>
           </p>
@@ -52,7 +53,7 @@
             specify where your views are inserted the surround it with your site 
             contents.
           </p>
-          <pre>
+<pre>
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;My Sample Site&lt;/title&gt;
@@ -69,7 +70,7 @@
   &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-          </pre>
+</pre>
         </section>
         <section id="views">
           <div class="page-header">
@@ -84,7 +85,7 @@
             the &lt;meta&gt; tag blank the <span data-sw-component="site-name" /> 
             will look for a template called "default".
           </p>
-    <pre>
+<pre>
 &lt;html&gt;
 &lt;meta name="template" content="example-template" /&gt; 
 &lt;body&gt;
@@ -93,7 +94,7 @@
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-    </pre>
+</pre>
         </section>
         <section id="components">
           <div class="page-header">
@@ -111,7 +112,7 @@
             Everything inside the &lt;body&gt; tag is what is inserted. The 
             component's name is its file-name minus extension.
           </p>
-    <pre>
+<pre>
 &lt;html&gt;
 &lt;body&gt;
   &lt;span&gt;
@@ -119,14 +120,14 @@
   &lt;/span&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-    </pre>
+</pre>
           <p>
             Call the component from a template, view or another component with the 
             following mark-up. 
           </p>
-    <pre>
+<pre>
 &lt;span data-sw-component="site-name"&gt;Component goes here&lt;/span &gt; 
-    </pre>
+</pre>
           <section id="components-source">
             <h2>Source
               <small>
@@ -140,14 +141,87 @@
             <p>
               A source can be a directory in your site where you wish to draw 
               contents. The following component call will gather contents from 
-              data/news/ inject it into components/news.html
+              data/news/ and inject it into components/news.html
             </p>
-    <pre>
-&lt;div data-sw-component="my-news" data-sw-source="news" /&gt; 
-    </pre>
-            TODO add more
+<pre>
+&lt;div data-sw-component="my-news" data-sw-source="news" /&gt;
+</pre>
+            <p>
+              Source items are stored in .edn files. The following specifies 
+              what the <strong>title</strong> and <strong>description</strong> 
+              should be. 
+            </p>
+<pre>
+{
+  :title "Lorem ipsum"
+  :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+}
+</pre>
+            <p>
+              The component mark-up formats the source. 
+            </p>
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt; 
+      &lt;h2&gt;data-sw-text="title"&gt;title placeholder&lt;/h2&gt;
+      &lt;div&gt;data-sw-text="description"&gt;description placeholder&lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
           </section>
-        
+          <section id="components-details">
+            <h2>Details Page
+              <small>
+                A dedicated page for a sourced component item 
+              </small>
+            </h2>
+            <p>
+              If a details page is detected (in the components/details with a
+              directory with file-name matching the source) then a link can
+              be placed in the sourced component like so.
+            </p>            
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt; 
+      &lt;h2&gt;data-sw-text="title"&gt;title placeholder&lt;/h2&gt;
+      &lt;div&gt;data-sw-text="description"&gt;description placeholder&lt;/div&gt;
+      &lt;a&gt;data-sw-href="title" href="#"&gt;Further details&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>            
+            
+            <p>Further details can be added to the source.</p> 
+<pre>
+{
+  :title "Lorem ipsum" 
+  :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+  :further-details "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+  
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
+}
+</pre>
+            <p>
+              The details component mark-up formats the source. 
+            </p>
+<pre>
+&lt;html&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li data-sw-text="title"&gt;title placeholder&gt;/li&gt;
+    &lt;li data-sw-text="description"&gt;description placeholder&gt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          </section>
           <section id="components-type">
             <h2>Type
               <small>
@@ -159,10 +233,12 @@
               Tree. Tree components place HTML into sub elements based on your 
               source hierarchy structure. E.G. Directory structure.
             </p>
-    <pre>
+<pre>
 &lt;div data-sw-component="my-tree" data-sw-source="my-source" data-sw-type="tree" /&gt; 
-    </pre>
+</pre>
+
             TODO add more
+            <br/><br/><br/><br/><br/><br/><br/>
           </section>
         </section>
       </div>
