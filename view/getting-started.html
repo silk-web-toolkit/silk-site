@@ -209,7 +209,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 }
 </pre>
             <p>
-              The details component mark-up formats the source. 
+              The details component formats the source. 
             </p>
 <pre>
 &lt;html&gt;
@@ -231,14 +231,36 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             <p>
               The default display type is flat (Non-tree). The only other type is 
               Tree. Tree components place HTML into sub elements based on your 
-              source hierarchy structure. E.G. Directory structure.
+              source hierarchy structure. E.G. Directory structure of .edn files.
             </p>
 <pre>
 &lt;div data-sw-component="my-tree" data-sw-source="my-source" data-sw-type="tree" /&gt; 
 </pre>
 
-            TODO add more
-            <br/><br/><br/><br/><br/><br/><br/>
+            <p> 
+              Due to the unique nature of tree components. The mark-up of tree
+              components can not be altered. Below is an example of the tree 
+              components mark-up up to help style.
+            </p>
+<pre>
+&lt;ul&gt;
+  &lt;li class="folder"&gt;directory
+    &lt;ul&gt;
+      &lt;li class="folder"&gt;sub
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="directory/sub/item1.html"&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href="directory/item1.html"&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="directory/item2.html"&gt;item2.edn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>            
+            <p>
+              Please note a tree component requires a details component to be
+              created.
+            </p>
           </section>
         </section>
       </div>
