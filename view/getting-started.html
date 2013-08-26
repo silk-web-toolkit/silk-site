@@ -53,24 +53,23 @@
             specify where your views are inserted the surround it with your site 
             contents.
           </p>
-<pre>
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Sample Site&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    Some header content
-  &lt;/header&gt;
-  &lt;div data-sw-view=""&gt;
-    View content will be inserted here
-  &lt;/div&gt;
-  &lt;footer&gt;
-    Some footer content
-  &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My Sample Site<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
+    Placeholder for header component
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;div</span><span class="na"> data-sw-view=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+    Placedholder for view
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    Placedholder for footer component
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
         </section>
         <section id="views">
           <div class="page-header">
@@ -85,16 +84,15 @@
             the &lt;meta&gt; tag blank the <span data-sw-component="site-name" /> 
             will look for a template called "default".
           </p>
-<pre>
-&lt;html&gt;
-&lt;meta name="template" content="example-template" /&gt; 
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;p&gt;This is the content for the view&lt;p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;meta</span><span class="na"> name=</span><span class="s">&quot;template&quot;</span><span class="na"> content=</span><span class="s">&quot;example-template&quot;</span><span class="nt"> /&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is the content for the view<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
         </section>
         <section id="components">
           <div class="page-header">
@@ -112,22 +110,20 @@
             Everything inside the &lt;body&gt; tag is what is inserted. The 
             component's name is its file-name minus extension.
           </p>
-<pre>
-&lt;html&gt;
-&lt;body&gt;
-  &lt;span&gt;
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;span&gt;</span>
     My Sample Site
-  &lt;/span&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
           <p>
             Call the component from a template, view or another component with the 
             following mark-up. 
           </p>
-<pre>
-&lt;span data-sw-component="site-name"&gt;Component goes here&lt;/span &gt; 
-</pre>
+<pre><code class="html"><span class="nt">&lt;span</span><span class="na"> data-sw-component=</span><span class="s">&quot;site-name&quot;</span><span class="nt"> /&gt;</span>
+</code></pre>
           <section id="components-source">
             <h2>Source
               <small>
@@ -143,35 +139,30 @@
               contents. The following component call will gather contents from 
               data/news/ and inject it into components/news.html
             </p>
-<pre>
-&lt;div data-sw-component="my-news" data-sw-source="news" /&gt;
-</pre>
+<pre><code class="html"><span class="nt">&lt;span</span><span class="na"> data-sw-component=</span><span class="s">&quot;my-news&quot;</span><span class="na"> data-sw-source=</span><span class="s">&quot;news&quot;</span><span class="nt"> /&gt;</span></code></pre>
             <p>
               Source items are stored in .edn files. The following specifies 
               what the <strong>title</strong> and <strong>description</strong> 
               should be. 
             </p>
-<pre>
-{
+<pre><code class="">{
   :title "Lorem ipsum"
   :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-}
-</pre>
+}</code></pre>
             <p>
               The component mark-up formats the source. 
             </p>
-<pre>
-&lt;html&gt;
-&lt;body&gt;
-  &lt;ul&gt;
-    &lt;li&gt; 
-      &lt;h2&gt;data-sw-text="title"&gt;title placeholder&lt;/h2&gt;
-      &lt;div&gt;data-sw-text="description"&gt;description placeholder&lt;/div&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
+      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
           </section>
           <section id="components-details">
             <h2>Details Page
@@ -184,43 +175,42 @@
               directory with file-name matching the source) then a link can
               be placed in the sourced component like so.
             </p>            
-<pre>
-&lt;html&gt;
-&lt;body&gt;
-  &lt;ul&gt;
-    &lt;li&gt; 
-      &lt;h2&gt;data-sw-text="title"&gt;title placeholder&lt;/h2&gt;
-      &lt;div&gt;data-sw-text="description"&gt;description placeholder&lt;/div&gt;
-      &lt;a&gt;data-sw-href="path" href="#"&gt;Further details&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>            
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
+      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;a</span><span class="na"> data-sw-href=</span><span class="s">&quot;path&quot;</span><span class="na"> href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Further details<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>            
             
             <p>Further details can be added to the source.</p> 
-<pre>
-{
+<pre><code class="html">{
   :title "Lorem ipsum" 
   :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
   :further-details "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
   
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
 }
-</pre>
+</code></pre>
             <p>
               The details component formats the source. 
             </p>
-<pre>
-&lt;html&gt;
-&lt;body&gt;
-  &lt;ul&gt;
-    &lt;li data-sw-text="title"&gt;title placeholder&gt;/li&gt;
-    &lt;li data-sw-text="description"&gt;description placeholder&gt;/li&gt;
-  &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
+      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
           </section>
           <section id="components-type">
             <h2>Type
@@ -233,30 +223,33 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               Tree. Tree components place HTML into sub elements based on your 
               source hierarchy structure. E.G. Directory structure of .edn files.
             </p>
-<pre>
-&lt;div data-sw-component="my-tree" data-sw-source="my-source" data-sw-type="tree" /&gt; 
-</pre>
-
+<pre><code class="html"><span class="nt">&lt;div</span><span class="na"> data-sw-component=</span><span class="s">&quot;my-tree&quot;</span><span class="na"> data-sw-source=</span><span class="s">&quot;my-source&quot;</span><span class="na"> data-sw-type=</span><span class="s">&quot;tree&quot;</span> <span class="nt">/&gt;</span></code></pre>
+<pre><code class="bash">data/
+└── my-source/
+    ├── sub/
+    │   └── item1.edn
+    ├── item1.edn
+    └── item2.edn
+</code></pre>
             <p> 
               Due to the unique nature of tree components. The mark-up of tree
               components can not be altered. Below is an example of the tree 
               components mark-up up to help style.
             </p>
-<pre>
-&lt;ul&gt;
-  &lt;li class="folder"&gt;directory
-    &lt;ul&gt;
-      &lt;li class="folder"&gt;sub
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href="directory/sub/item1.html"&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href="directory/item1.html"&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="directory/item2.html"&gt;item2.edn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</pre>            
+<pre><code class="html"><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span><span class="na"> class=</span></span><span class="s">&quot;folder&quot;</span><span class="nt">&gt;</span>my-source
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li</span><span class="na"> class=</span><span class="s">&quot;folder&quot;</span><span class="nt">&gt;</span>sub
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span><span class="na"> href=</span><span class="s">&quot;directory/item1.html&quot;</span><span class="nt">&gt;</span>item1.edn<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span><span class="na"> href=</span><span class="s">&quot;directory/item1.html&quot;</span><span class="nt">&gt;</span>item1.edn<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span><span class="na"> href=</span><span class="s">&quot;directory/item2.html&quot;</span><span class="nt">&gt;</span>item2.edn<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul<span class="nt">&gt;</span>
+</code></pre>            
             <p>
               Please note a tree component requires a details component to be
               created.
