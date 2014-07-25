@@ -1,3 +1,4 @@
 site
+.menu
 *.sublime-project
 *.sublime-workspace
