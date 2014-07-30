@@ -1,4 +1,4 @@
 site
-.menu
+.nav
 *.sublime-project
 *.sublime-workspace
