@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="col-md-9" role="main">
+
         <section data-sw-nav="Setup" id="setup">
           <div class="page-header">
             <h1>Setup
@@ -29,16 +30,16 @@
             <li>open your site from the terminal with <code>open site/myfile.html</code></li>
           </ul>
         </section>
+
         <section data-sw-nav="Templates" id="templates">
           <div class="page-header">
             <h1>Templates
-              <small>Structure your site once &amp; reuse it on each page</small>
+              <small>Get the same look and feel across all your pages</small>
             </h1>
           </div>
           </p>
-            Add the following attribute 'data-sw-view', to &lt;div&gt; tag, to
-            specify where your views are inserted the surround it with your site
-            contents.
+            Add a 'data-sw-view'attribute to a  &lt;div&gt; tag, to
+            specify where your views are inserted into your templates.
           </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -58,17 +59,18 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
         </section>
+
         <section data-sw-nav="Views" id="views">
           <div class="page-header">
             <h1>Views
               <small>
-                Wrap into templates and become a page on your site
+                The epicentre of your site, organise your content
               </small>
             </h1>
           </div>
           <p>
             This view points to a template called "example-template". If you leave
-            the &lt;meta&gt; tag blank the <span data-sw-component="site-name" />
+            the &lt;meta&gt; tag blank Silk
             will look for a template called "default".
           </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
@@ -81,6 +83,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
         </section>
+
         <section data-sw-nav="Components" id="components">
           <div class="page-header">
             <h1>Components
@@ -88,13 +91,11 @@
             </h1>
           </div>
           <p>
-            The most basic component you may wish to create for your site maybe
-            one containing your site name. Doing so means you can control it one
-            place.
+            Simple components enable re-use of structural or semantic markup.
           </p>
           <p>
             Component mark up must be placed into the components directory.
-            Everything inside the &lt;body&gt; tag is what is inserted. The
+            Everything inside the &lt;body&gt; tag is injected into the caller. The
             component's name is its file-name minus extension.
           </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
@@ -111,20 +112,19 @@
           </p>
 <pre><code class="html"><span class="nt">&lt;span</span><span class="na"> data-sw-component=</span><span class="s">&quot;site-name&quot;</span><span class="nt"> /&gt;</span>
 </code></pre>
-          <section data-sw-nav="Component Source" id="components-source">
-            <h2>Source
+          <section data-sw-nav="Data driven components" id="components-data-driven">
+            <h2>Data driven components
               <small>
                 A component attribute which specifies where to read content from
               </small>
             </h2>
             <p>
-              Once configure a sourced component allows you to add contents to
+              Once configure a data driven component allows you to add contents to
               your site without editing the mark-up.
             </p>
             <p>
-              A source can be a directory in your site where you wish to draw
-              contents. The following component call will gather contents from
-              data/news/ and inject it into components/news.html
+              A source can be any directory under the <em>data</em> directory . The following component call will gather contents from
+              <em>data/news</em> and inject it into components/news.html
             </p>
 <pre><code class="html"><span class="nt">&lt;span</span><span class="na"> data-sw-component=</span><span class="s">&quot;my-news&quot;</span><span class="na"> data-sw-source=</span><span class="s">&quot;news&quot;</span><span class="nt"> /&gt;</span></code></pre>
             <p>
@@ -137,7 +137,7 @@
   :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 }</code></pre>
             <p>
-              The component mark-up formats the source.
+              The component mark-up presents whatever data you want to extract from the edn files.
             </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;body&gt;</span>
@@ -151,6 +151,7 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
           </section>
+
           <section data-sw-nav="Component Details" id="components-details">
             <h2>Details Page
               <small>
@@ -202,7 +203,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
           <section data-sw-nav="Component Type" id="components-type">
             <h2>Type
               <small>
-                A component attribute which specifies the how to render
+                Specifies how a component should be rendered
               </small>
             </h2>
             <p>
