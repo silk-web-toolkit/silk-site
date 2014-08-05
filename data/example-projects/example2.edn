@@ -1,7 +1,6 @@
 {
-  :title "Sourced Component"
+  :title "Data driven Component"
   :details "Two news feeds coming from a data sourced component a details page."
   :image "resource/img/sourced-component.png"
-  :zip "resource/sourced-component.zip"
+  :zip "https://github.com/silk-web-toolkit/silk-examples/archive/develop.zip"
 }
-
