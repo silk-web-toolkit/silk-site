@@ -39,24 +39,24 @@
             </h1>
           </div>
           </p>
-            Add a 'data-sw-view'attribute to a  &lt;div&gt; tag, to
+            Add a 'data-sw-view' attribute to a  &lt;div&gt; tag, to
             specify where your views are inserted into your templates.
           </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;title&gt;</span>My Sample Site<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;header&gt;</span>
-    Placeholder for header component
-  <span class="nt">&lt;/header&gt;</span>
-  <span class="nt">&lt;div</span><span class="na"> data-sw-view=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-    Placedholder for view
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;footer&gt;</span>
-    Placedholder for footer component
-  <span class="nt">&lt;/footer&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My Sample Site<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;header&gt;</span>
+      Placeholder for header component
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span><span class="na"> data-sw-view=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+      Placedholder for view
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;footer&gt;</span>
+      Placedholder for footer component
+    <span class="nt">&lt;/footer&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
         </section>
@@ -70,17 +70,21 @@
             </h1>
           </div>
           <p>
-            This view points to a template called "example-template". If you leave
-            the &lt;meta&gt; tag blank Silk
-            will look for a template called "default".
+            Out of the box a view will look for a template called "default".  You can override this by providing an optional meta tag, see below.
+          </p>
+          <p>
+            The template title can be overriden by providing an optional title element in the same place.
           </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;meta</span><span class="na"> name=</span><span class="s">&quot;template&quot;</span><span class="na"> content=</span><span class="s">&quot;example-template&quot;</span><span class="nt"> /&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This is the content for the view<span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;head</span>
+    <span class="nt">&lt;title&gt;</span>My Title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span><span class="na"> name=</span><span class="s">&quot;template&quot;</span><span class="na"> content=</span><span class="s">&quot;example-template&quot;</span><span class="nt"> /&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;p&gt;</span>This is the content for the view<span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
         </section>
@@ -99,12 +103,15 @@
             Everything inside the &lt;body&gt; tag is injected into the caller. The
             component's name is its file-name minus extension.
           </p>
+          <p>
+            An example of a simple component is given below.
+          </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;span&gt;</span>
-    My Sample Site
-  <span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;span&gt;</span>
+      My Sample Site
+    <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
           <p>
@@ -116,15 +123,15 @@
           <section data-sw-nav="Data driven components" id="components-data-driven">
             <h2>Data driven components
               <small>
-                A component attribute which specifies where to read content from
+                Populated via data files
               </small>
             </h2>
             <p>
-              Once configure a data driven component allows you to add contents to
+              Once configured a data driven component allows you to add contents to
               your site without editing the mark-up.
             </p>
             <p>
-              A source can be any directory under the <em>data</em> directory . The following component call will gather contents from
+              A source is a collection of like articles, for example news stories or blog posts. A source can be any directory under the <em>data</em> directory . The following component call will gather contents from
               <em>data/news</em> and inject it into components/news.html
             </p>
 <pre><code class="html"><span class="nt">&lt;span</span><span class="na"> data-sw-component=</span><span class="s">&quot;my-news&quot;</span><span class="na"> data-sw-source=</span><span class="s">&quot;news&quot;</span><span class="nt"> /&gt;</span></code></pre>
@@ -138,69 +145,62 @@
   :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 }</code></pre>
             <p>
-              The component mark-up presents whatever data you want to extract from the edn files.
+              The component mark-up presents whatever data you want to extract from the edn files.  Below we are extracting a title and a description from the data files.
             </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
-      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
+          <p>
+            Other data related attributes include:
+          </p>
+          <ul>
+            <li><code>data-sw-sort</code> (chooses an item of data to sort on)</li>
+            <li><code>data-sw-sort-dir</code> (specify ascending or descending)</li>
+            <li><code>data-sw-limit</code> (limit the number of items in your list)</li>
+          </ul>
           </section>
 
-          <section data-sw-nav="Component Details" id="components-details">
+          <section data-sw-nav="Details Page" id="details-page">
             <h2>Details Page
               <small>
                 A dedicated page for a sourced component item
               </small>
             </h2>
             <p>
-              If a details page is detected (in the components/details with a
-              directory with file-name matching the source) then a link can
-              be placed in the sourced component like so.
+              A details page is a dedicated template for rendering whole articles belonging to a specific source.  If you have a
+              datasource 'news' in <code>data/news</code> every article in it can be rendered in a detail template 'news' under <code>/template/detail</code>.
+            </p>
+            <p>
+              A sample details page is listed below.
             </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
-      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;a</span><span class="na"> data-sw-href=</span><span class="s">&quot;path&quot;</span><span class="na"> href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Further details<span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    &lt;div data-sw-component="detail/body"&gt;Placeholder for component&lt;/div&gt;
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
-
-            <p>Further details can be added to the source.</p>
-<pre><code class="html">{
-  :title "Lorem ipsum"
-  :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-  :further-details "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-}
-</code></pre>
             <p>
-              The details component formats the source.
+              <span class="label label-info">Please note</span> only components can extract data from datasources, so your details page should include a component.
+            </p>
+            <p>
+              Link to a details page from a component using a special attribute value 'sw/path', demonstrated below.
             </p>
 <pre><code class="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-      <span class="nt">&lt;h2</span><span class="na"> data-sw-text=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Placeholder for title<span class="nt">&lt;/h2&gt;</span>
-      <span class="nt">&lt;div</span><span class="na"> data-sw-text=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Placeholder for description<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    &lt;a data-sw-href="sw/path" href="#"&gt;Comments&lt;/a&gt;
+  <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
           </section>
+
           <section data-sw-nav="Component Type" id="components-type">
             <h2>Type
               <small>
@@ -223,7 +223,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             <p>
               Due to the unique nature of tree components. The mark-up of tree
               components can not be altered. Below is an example of the tree
-              components mark-up up to help style.
+              components markup to help style.
             </p>
 <pre><code class="html"><span class="nt">&lt;ul&gt;</span>
   <span class="nt">&lt;li</span><span class="na"> class=</span></span><span class="s">&quot;folder&quot;</span><span class="nt">&gt;</span>my-source
@@ -240,7 +240,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 <span class="nt">&lt;/ul<span class="nt">&gt;</span>
 </code></pre>
             <p>
-              Please note a tree component requires a details component to be
+              <span class="label label-info">Please note</span> a tree component requires a details component to be
               created.
             </p>
           </section>
