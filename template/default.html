@@ -9,15 +9,17 @@
     <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.css"></link>
     <link rel="stylesheet" type="text/css" href="resource/css/pygments-manni.css"></link>
     <link rel="stylesheet" type="text/css" href="resource/css/silk.css"></link>
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap-prettify.css"></link>
     <!-- Reference microformats combined profile -->
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <script type="text/javascript" src="resource/js/jquery.js"></script>
     <script type="text/javascript" src="resource/js/bootstrap.js"></script>
+    <script src="resource/js/prettify/prettify.js"></script>
     <script type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-31214840-1']);
 		  _gaq.push(['_trackPageview']);
-		  
+
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -25,7 +27,7 @@
 		  })();
 		</script>
   </head>
-  <body>
+  <body onload="prettyPrint();">
     <div data-sw-component="header">Placeholder for header</div>
     <br/><br/><br/>
     <div class="container">
