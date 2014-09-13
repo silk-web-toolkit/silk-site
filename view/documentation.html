@@ -14,14 +14,14 @@
 
         <section data-sw-nav="Setup" id="setup" data-sw-content>
           <div class="page-header">
-            <h1>Setup
+            <h2>Setup
               <small>
                 Lets get you up and running with the
                 <span data-sw-component="site-name"/>
               </small>
-            </h1>
+            </h2>
           </div>
-          <h2>Linux</h2>
+          <h3>Linux</h3>
           <ul>
             <li>put <a href="https://github.com/silk-web-toolkit/silk/releases/download/0.5.0/silk.jar">silk.jar</a> somewhere</li>
             <li>create a <code>~/.silk location for shared silk components and datasources</code></li>
@@ -34,9 +34,9 @@
 
         <section data-sw-nav="Templates" id="templates" data-sw-content>
           <div class="page-header">
-            <h1>Templates
+            <h2>Templates
               <small>Get the same look and feel across all your pages</small>
-            </h1>
+            </h2>
           </div>
           </p>
             Add a <code>data-sw-view</code> attribute to a  <code>&lt;div&gt;</code> tag, to
@@ -62,11 +62,11 @@
 
         <section data-sw-nav="Views" id="views" data-sw-content>
           <div class="page-header">
-            <h1>Views
+            <h2>Views
               <small>
                 The epicentre of your site, organise your content
               </small>
-            </h1>
+            </h2>
           </div>
           <p>
             Out of the box a view will look for a template called "default".  You can override this by providing an optional <code>&lt;meta&gt;</code> tag, see below.
@@ -89,9 +89,9 @@
 
         <section data-sw-nav="Components" id="components" data-sw-content>
           <div class="page-header">
-            <h1>Components
+            <h2>Components
               <small>Contain reusable mark-up</small>
-            </h1>
+            </h2>
           </div>
           <p>
             Simple components enable re-use of structural or semantic mark-up.
@@ -119,11 +119,13 @@
         </section>
 
         <section data-sw-nav="Data driven components" id="components-data-driven">
-          <h2>Data driven components
-            <small>
-              Populated via data files
-            </small>
-          </h2>
+          <div class="page-header">
+            <h2>Data driven components
+              <small>
+                Populated via data files
+              </small>
+            </h2>
+          </div>
           <p>
             Once configured a data driven component allows you to add contents to
             your site without editing the mark-up.
@@ -168,11 +170,13 @@
         </section>
 
         <section data-sw-nav="Details Page" id="details-page" data-sw-content>
-          <h2>Details Page
-            <small>
-              A dedicated page for a sourced component item
-            </small>
-          </h2>
+          <div class="page-header">
+            <h2>Details Page
+              <small>
+                A dedicated page for a sourced component item
+              </small>
+            </h2>
+          </div>
           <p>
             A details page is a dedicated template for rendering whole articles belonging to a specific source.  If you have a
             datasource 'news' in <code>data/news</code> every article in it can be rendered in a detail template 'news' under <code>/template/detail</code>.
@@ -199,11 +203,13 @@
         </section>
 
         <section data-sw-nav="Component Type" id="components-type" data-sw-content>
-          <h2>Component Type
-            <small>
-              Specifies how a component should be rendered
-            </small>
-          </h2>
+          <div class="page-header">
+            <h2>Component Type
+              <small>
+                Specifies how a component should be rendered
+              </small>
+            </h2>
+          </div>
           <p>
             The default display type is flat (Non-tree). The only other type is
             Tree. Tree components place HTML into sub elements based on your
@@ -241,11 +247,13 @@
         </section>
 
         <section data-sw-nav="Navigation" id="navigation" data-sw-content>
-          <h2>Navigation
-            <small>
-              Generate site menu's from data driven components.
-            </small>
-          </h2>
+          <div class="page-header">
+            <h2>Navigation
+              <small>
+                Generate site menu's from data driven components.
+              </small>
+            </h2>
+          </div>
           <p>
             The <span data-sw-component="site-name"/> offers two forms of navigation, <code>views</code> and <code>bookmarks</code>. View navigation caters for site hierarchy. Bookmark navigation for sections inside a view. Below details how and where specific attributes must be placed. Doing so creates navigation data (here ~/.silk/sw/) which can be injected into a data driven component to form menus.
           </p>
