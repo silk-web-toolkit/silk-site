@@ -12,7 +12,7 @@
       </div>
       <div class="col-md-9" role="main">
 
-        <section data-sw-nav="Setup" id="setup">
+        <section data-sw-nav="Setup" id="setup" data-sw-content>
           <div class="page-header">
             <h1>Setup
               <small>
@@ -27,19 +27,19 @@
             <li>create a <code>~/.silk location for shared silk components and datasources</code></li>
             <li>navigate to your silk site see an <a href="examples.html" title="example Silk site">example</a></li>
             <li>in the terminal at the root of your site run <code>java -jar /path/to/silk.jar spin</code></li>
-            <li>the pieces of your site (described below) will be assmebled and placed in a <em>site</em> directory</li>
+            <li>the pieces of your site (described below) will be assmebled and placed in a <code>site</code> directory</li>
             <li>open your site from the terminal with <code>firefox site/myfile.html</code> (assuming firefox is on your path)</li>
           </ul>
         </section>
 
-        <section data-sw-nav="Templates" id="templates">
+        <section data-sw-nav="Templates" id="templates" data-sw-content>
           <div class="page-header">
             <h1>Templates
               <small>Get the same look and feel across all your pages</small>
             </h1>
           </div>
           </p>
-            Add a 'data-sw-view' attribute to a  &lt;div&gt; tag, to
+            Add a <code>data-sw-view</code> attribute to a  <code>&lt;div&gt;</code> tag, to
             specify where your views are inserted into your templates.
           </p>
           <pre class="prettyprint">&lt;html&gt;
@@ -60,7 +60,7 @@
 &lt;/html&gt;</pre>
         </section>
 
-        <section data-sw-nav="Views" id="views">
+        <section data-sw-nav="Views" id="views" data-sw-content>
           <div class="page-header">
             <h1>Views
               <small>
@@ -69,7 +69,7 @@
             </h1>
           </div>
           <p>
-            Out of the box a view will look for a template called "default".  You can override this by providing an optional meta tag, see below.
+            Out of the box a view will look for a template called "default".  You can override this by providing an optional <code>&lt;meta&gt;</code> tag, see below.
           </p>
           <p>
             The template title can be overriden by providing an optional title element in the same place.
@@ -87,7 +87,7 @@
 &lt;/html&gt;</pre>
         </section>
 
-        <section data-sw-nav="Components" id="components">
+        <section data-sw-nav="Components" id="components" data-sw-content>
           <div class="page-header">
             <h1>Components
               <small>Contain reusable mark-up</small>
@@ -98,7 +98,7 @@
           </p>
           <p>
             Component mark up must be placed into the components directory.
-            Everything inside the &lt;body&gt; tag is injected into the caller. The
+            Everything inside the <code>&lt;body&gt;</code> tag is injected into the caller. The
             component's name is its file-name minus extension.
           </p>
           <p>
@@ -116,129 +116,131 @@
             following mark-up.
           </p>
           <pre class="prettyprint">&lt;span data-sw-component=&quot;site-name&quot; /&gt;</pre>
-          <section data-sw-nav="Data driven components" id="components-data-driven">
-            <h2>Data driven components
-              <small>
-                Populated via data files
-              </small>
-            </h2>
-            <p>
-              Once configured a data driven component allows you to add contents to
-              your site without editing the mark-up.
-            </p>
-            <p>
-              A source is a collection of like articles, for example news stories or blog posts. A source can be any directory under the <em>data</em> directory . The following component call will gather contents from
-              <em>data/news</em> and inject it into components/news.html
-            </p>
-            <pre class="prettyprint">&lt;span data-sw-component=&quot;my-news&quot; data-sw-source=&quot;news&quot; /&gt;</pre>
-            <p>
-              Source items are stored in .edn files. The following specifies
-              what the <strong>title</strong> and <strong>description</strong>
-              should be.
-            </p>
-            <pre class="prettyprint">
+        </section>
+
+        <section data-sw-nav="Data driven components" id="components-data-driven">
+          <h2>Data driven components
+            <small>
+              Populated via data files
+            </small>
+          </h2>
+          <p>
+            Once configured a data driven component allows you to add contents to
+            your site without editing the mark-up.
+          </p>
+          <p>
+            A source is a collection of like articles, for example news stories or blog posts. A source can be any directory under the <code>data</code> directory . The following component call will gather contents from
+            <code>data/news</code> and inject it into components/news.html
+          </p>
+          <pre class="prettyprint">&lt;span data-sw-component=&quot;my-news&quot; data-sw-source=&quot;news&quot; /&gt;</pre>
+          <p>
+            Source items are stored in .edn files. The following specifies
+            what the <code>title</code> and <code>description</code>
+            should be.
+          </p>
+          <pre class="prettyprint">
 {
-  :title "Lorem ipsum"
-  :description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+:title "Lorem ipsum"
+:description "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 }
-            </pre>
-            <p>
-              The component mark-up presents whatever data you want to extract from the edn files.  Below we are extracting a title and a description from the data files.
-            </p>
-            <pre class="prettyprint">&lt;html&gt;
-  &lt;body&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;h2 data-sw-text=&quot;title&quot;&gt;Placeholder for title&lt;/h2&gt;
-        &lt;div data-sw-text=&quot;description&quot;&gt;Placeholder for description&lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/body&gt;
+          </pre>
+          <p>
+            The component mark-up presents whatever data you want to extract from the edn files.  Below we are extracting a title and a description from the data files.
+          </p>
+          <pre class="prettyprint">&lt;html&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;h2 data-sw-text=&quot;title&quot;&gt;Placeholder for title&lt;/h2&gt;
+      &lt;div data-sw-text=&quot;description&quot;&gt;Placeholder for description&lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        <p>
+          Other data related attributes include:
+        </p>
+        <ul>
+          <li><code>data-sw-sort</code> (chooses an item of data to sort on)</li>
+          <li><code>data-sw-sort-dir</code> (specify ascending or descending)</li>
+          <li><code>data-sw-limit</code> (limit the number of items in your list)</li>
+        </ul>
+        </section>
+
+        <section data-sw-nav="Details Page" id="details-page" data-sw-content>
+          <h2>Details Page
+            <small>
+              A dedicated page for a sourced component item
+            </small>
+          </h2>
+          <p>
+            A details page is a dedicated template for rendering whole articles belonging to a specific source.  If you have a
+            datasource 'news' in <code>data/news</code> every article in it can be rendered in a detail template 'news' under <code>/template/detail</code>.
+          </p>
+          <p>
+            A sample details page is listed below.
+          </p>
+          <pre class="prettyprint">&lt;html&gt;
+&lt;body&gt;
+  &lt;div data-sw-component="detail/body"&gt;Placeholder for component&lt;/div&gt;
+&lt;/body&gt;
 &lt;/html&gt;</pre>
           <p>
-            Other data related attributes include:
+            <span class="label label-info">Please note only components can extract data from datasources, so your details page should include a component.</span>
           </p>
-          <ul>
-            <li><code>data-sw-sort</code> (chooses an item of data to sort on)</li>
-            <li><code>data-sw-sort-dir</code> (specify ascending or descending)</li>
-            <li><code>data-sw-limit</code> (limit the number of items in your list)</li>
-          </ul>
-          </section>
-
-          <section data-sw-nav="Details Page" id="details-page">
-            <h2>Details Page
-              <small>
-                A dedicated page for a sourced component item
-              </small>
-            </h2>
-            <p>
-              A details page is a dedicated template for rendering whole articles belonging to a specific source.  If you have a
-              datasource 'news' in <code>data/news</code> every article in it can be rendered in a detail template 'news' under <code>/template/detail</code>.
-            </p>
-            <p>
-              A sample details page is listed below.
-            </p>
-            <pre class="prettyprint">&lt;html&gt;
-  &lt;body&gt;
-    &lt;div data-sw-component="detail/body"&gt;Placeholder for component&lt;/div&gt;
-  &lt;/body&gt;
+          <p>
+            Link to a details page from a component using a special attribute value <code>sw/path</code>, demonstrated below.
+          </p>
+          <pre class="prettyprint">&lt;html&gt;
+&lt;body&gt;
+  &lt;a data-sw-href="sw/path" href="#"&gt;Comments&lt;/a&gt;
+&lt;/body&gt;
 &lt;/html&gt;</pre>
-            <p>
-              <span class="label label-info">Please note only components can extract data from datasources, so your details page should include a component.</span>
-            </p>
-            <p>
-              Link to a details page from a component using a special attribute value 'sw/path', demonstrated below.
-            </p>
-            <pre class="prettyprint">&lt;html&gt;
-  &lt;body&gt;
-    &lt;a data-sw-href="sw/path" href="#"&gt;Comments&lt;/a&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
-          </section>
-
-          <section data-sw-nav="Component Type" id="components-type">
-            <h2>Component Type
-              <small>
-                Specifies how a component should be rendered
-              </small>
-            </h2>
-            <p>
-              The default display type is flat (Non-tree). The only other type is
-              Tree. Tree components place HTML into sub elements based on your
-              source hierarchy structure. E.G. Directory structure of .edn files.
-            </p>
-            <pre class="prettyprint">&lt;div data-sw-component=&quot;my-tree&quot; data-sw-source=&quot;my-source&quot; data-sw-type=&quot;tree&quot; /&gt;</pre>
-            <pre class="prettyprint">data/
-└── my-source/
-    ├── sub/
-    │   └── item1.edn
-    ├── item1.edn
-    └── item2.edn</pre>
-            <p>
-              Due to the unique nature of tree components. The mark-up of tree
-              components can not be altered. Below is an example of the tree
-              components mark-up to help style.
-            </p>
-            <pre class="prettyprint">&lt;ul&gt;
-  &lt;li class=&quot;folder&quot;&gt;my-source
-    &lt;ul&gt;
-      &lt;li class=&quot;folder&quot;&gt;sub
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;directory/item1.html&quot;&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;directory/item1.html&quot;&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;directory/item2.html&quot;&gt;item2.edn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-            <p>
-              <span class="label label-info">Please note a tree component requires a details component to be
-              created.</span>
-            </p>
-          </section>
         </section>
-        <section data-sw-nav="Navigation" id="navigation">
+
+        <section data-sw-nav="Component Type" id="components-type" data-sw-content>
+          <h2>Component Type
+            <small>
+              Specifies how a component should be rendered
+            </small>
+          </h2>
+          <p>
+            The default display type is flat (Non-tree). The only other type is
+            Tree. Tree components place HTML into sub elements based on your
+            source hierarchy structure. E.G. Directory structure of .edn files.
+          </p>
+          <pre class="prettyprint">&lt;div data-sw-component=&quot;my-tree&quot; data-sw-source=&quot;my-source&quot; data-sw-type=&quot;tree&quot; /&gt;</pre>
+          <pre class="prettyprint">data/
+└── my-source/
+  ├── sub/
+  │   └── item1.edn
+  ├── item1.edn
+  └── item2.edn</pre>
+          <p>
+            Due to the unique nature of tree components. The mark-up of tree
+            components can not be altered. Below is an example of the tree
+            components mark-up to help style.
+          </p>
+          <pre class="prettyprint">&lt;ul&gt;
+&lt;li class=&quot;folder&quot;&gt;my-source
+  &lt;ul&gt;
+    &lt;li class=&quot;folder&quot;&gt;sub
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;directory/item1.html&quot;&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;directory/item1.html&quot;&gt;item1.edn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;directory/item2.html&quot;&gt;item2.edn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          <p>
+            <span class="label label-info">Please note a tree component requires a details component to be
+            created.</span>
+          </p>
+        </section>
+
+        <section data-sw-nav="Navigation" id="navigation" data-sw-content>
           <h2>Navigation
             <small>
               Generate site menu's from data driven components.
@@ -259,7 +261,6 @@
 &lt;html&gt;</pre>
           <p>
             Data for page bookmarks is generated by placing the <code>data-sw-nav</code> attribute in the tag containing the linked anchor tag <code>id</code>, like so.
-            <span class="label label-info">Please note it is <strong>not</strong> mandatory to use a <code>section</code> tag.</span>
           </p>
           <pre class="prettyprint">&lt;section data-sw-nav="Section 1" id="sec1"&gt;
   &lt;h2&gt;Section 1&lt;/h2&gt;
@@ -267,6 +268,8 @@
     This is the content for the section 1
   &lt;/p&gt;
 &lt;/section&gt;</pre>
+          <span class="label label-info">Please note it is not mandatory to use a <code>section</code> tag.</span>
+          <br/><br/>
           <p>
             Views and bookmarks data are written into a component, to create a menu, by setting the <code>data-sw-source</code> attribute as <code>sw/views</code> or <code>sw/bookmarks/index</code>. The bookmarks should specify which view they are found on. You may also wish to sort the views by priority like so.
           </p>
@@ -304,6 +307,7 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre>
         </section>
+        
       </div>
     </div>
     <script src="resource/js/application.js"></script>
