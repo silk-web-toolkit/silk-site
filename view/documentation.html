@@ -316,6 +316,30 @@
 &lt;/html&gt;</pre>
         </section>
 
+        <section data-sw-nav="Tipue Search Support" id="tipue-search-content" data-sw-content>
+          <div class="page-header">
+            <h2>Tipue Search Support
+              <small>
+                Control your searchable content dynamically
+              </small>
+            </h2>
+          </div>
+          <p>
+            We recommend you look at <a href="http://www.tipue.com/search/" target="_blank">Tipue Search</a>, an open source <a href="http://jquery.com/" target="_blank">JQuery</a> search engine, along with our <a href="examples.html">Blog example</a>. This search engine has two modes "Live" and "JSON". "Live" automatically indexes your site but due to the <a href="en.wikipedia.org/wiki/Same-origin_policy" target="_blank">Same Origin Policy</a> it requires your site to be on the web (live) for it to work. "JSON" mode requires a JavaScript file with search terms to be maintained. By adding attribute <code>data-sw-content</code> to your markup the <span data-sw-component="site-name"/> will allow you to include a JavaScript file (<code>resource/js/tipuesearch_content.js</code>) which contains the "JSON" search terms. The <code>data-sw-content</code> attribute can be added to Templates, Views, Components and Details Pages. Navigation attributes are used to gather titles and links for your searchable contents. Below is an example of how to included multiple searchable sections to a page with bookmark navigation.
+          </p>
+          <pre class="prettyprint">&lt;html&gt;
+  &lt;body data-sw-nav="Documentation" data-sw-priority="2" &gt;
+    &lt;section data-sw-nav="Section 1" id="sec1" data-sw-content&gt;
+      &lt;p&gt;Some searchable content.&lt;/p&gt;
+      &lt;p&gt;Some more.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section data-sw-nav="Section 2" id="sec2" data-sw-content&gt;
+      &lt;p&gt;Some searchable content.&lt;/p&gt;
+      &lt;p&gt;Some more.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </section>
       </div>
     </div>
     <script src="resource/js/application.js"></script>
