@@ -1,6 +1,6 @@
 {
   :title "Blank Template"
-  :details "A componentized template to base your projects on."
-  :image "resource/img/blank-template.png"
-  :zip "https://github.com/silk-web-toolkit/silk-examples/archive/develop.zip"
+  :details "A componentized template to base your projects off."
+  :url "https://silk-web-toolkit.github.io/blank-template"
+  :zip "https://github.com/silk-web-toolkit/blank-template/archive/master.zip"
 }

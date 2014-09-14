@@ -77,3 +77,30 @@
     margin-bottom: 0;
   }
 }
+
+.example {
+  float: left;
+  width: 350px;
+  margin: 20px;
+  height: 400px;
+}
+
+.wrap-screenshot {
+  height: 320px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.screenshot {
+  width: 1000px;
+  height: 1000px;
+  border: none;
+  overflow: hidden;
+  -ms-zoom: 0.35;
+  -moz-transform: scale(0.35);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.35);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.35);
+  -webkit-transform-origin: 0 0;
+}
