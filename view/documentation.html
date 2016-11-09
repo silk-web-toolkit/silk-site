@@ -137,7 +137,7 @@
           </ul>
           <p>
             The following will gather articles from
-            <code>data/news</code> and inject each into a HTML list (<code>&lt;ul&gt; &lt;ol&gt; &lt;tbody&gt;</code>)
+            <code>data/news</code> (a directory called news under the data directory on disk) and inject each into an HTML list (<code>&lt;ul&gt; &lt;ol&gt; &lt;tbody&gt;</code>)
           </p>
           <pre class="prettyprint">&lt;ul data-sw-source=&quot;news&quot;&gt;
   &lt;li&gt;
@@ -178,7 +178,7 @@
           Use special attribute value <code>sw/contents</code> to access each directory
           and <code>sw/name</code> for the file/folder name.
         </p>
-        <pre class="prettyprint">&lt;ul data-sw-source=&quot;news&quot;&gt;
+        <pre class="prettyprint">&lt;ul data-sw-source=&quot;my-source&quot;&gt;
   &lt;li&gt;
     &lt;span data-sw-text=&quot;sw/name&quot;&gt;&lt;/span&gt;
     &lt;ul&gt;
