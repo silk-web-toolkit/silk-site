@@ -1,0 +1,24 @@
+{
+  :id "views"
+  :#id "#views"
+  :priority 3
+  :title "Views"
+  :title-blurb "The epicentre of your site, organise your content"
+  :text-md "
+  Out of the box a view will look for a template called \"default\". You can override this by providing an optional `<meta>` tag, see below.
+
+  The template title can be overriden by providing an optional title element in the same place.
+
+```prettyprint
+<html>
+  <head>
+    <title>My Title</title>
+    <meta name=\"template\" content=\"example-template\" />
+  </head>
+  <body>
+    <div>
+      <p>This is the content for the view<p>
+    </div>
+  </body>
+</html>```"
+}

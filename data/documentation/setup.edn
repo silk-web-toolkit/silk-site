@@ -1,0 +1,13 @@
+{
+  :id "setup"
+  :#id "#setup"
+  :priority 1
+  :title "Setup"
+  :title-blurb "Lets get you up and running with the Silk Web Toolkit"
+  :text-md "### Linux
+*   put [silk.jar](https://github.com/silk-web-toolkit/silk/releases/download/0.10.0/silk.jar) somewhere
+*   navigate to your silk site see an [example](examples.html \"example Silk site\")
+*   in the terminal at the root of your site run `java -jar /path/to/silk.jar spin`
+*   the pieces of your site (described below) will be assmebled and placed in a `site` directory
+*   open your site from the terminal with `firefox site/myfile.html` (assuming firefox is on your path)"
+}
