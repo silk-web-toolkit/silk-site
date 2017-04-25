@@ -150,13 +150,17 @@
     &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</pre>
+
           <p>A source can also be injected into a component like so.</p>
           <pre class="prettyprint">&lt;div data-sw-component=&quot;my-news&quot; data-sw-source=&quot;news&quot; /&gt;</pre>
           <p>
             Below is a single news item, in
             <a href="https://github.com/edn-format/edn" target="_blank">EDN Format</a>,
-            containing all the mentioned keys.
+            containing all the mentioned keys. Appending the keys with
+            <code>-html</code> or <code>-md</code> would allow rich injection of
+            HTML or Markdown respectively.
           </p>
+
           <label>File:</label> <kbd>data/news/item1.edn</kbd>
           <pre class="prettyprint">
 {:title "Lorem ipsum"
@@ -164,9 +168,9 @@
  :images [{:path "resources/img/1.jpg" :tooltip "Picture 1"}
           {:path "resources/img/2.jpg" :tooltip "Picture 2"}]}</pre>
 
-        <p>
-          A source could also be a directory tree like so.
-        </p>
+          <p>
+            A source could also be a directory tree like so.
+          </p>
 
 <pre class="prettyprint">data/
 └── my-source/
