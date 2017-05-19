@@ -42,7 +42,7 @@ Below is a single news item, in [EDN Format](https://github.com/edn-format/edn),
  :images [{:path \"resources/img/1.jpg\" :tooltip \"Picture 1\"}
           {:path \"resources/img/2.jpg\" :tooltip \"Picture 2\"}]}```
 
-Attributes `data-sw-when` and `data-sw-when-not` can be used handle optional values. The following will display in a link anchor if `link-path` is present or empty otherwise just as text.
+Attributes `data-sw-when` and `data-sw-when-not` can be used to handle optional values. The following will display a link when `link-path` is present and a span if it isn't .
 
 ```prettyprint
 <div data-sw-when=\"link-path\">

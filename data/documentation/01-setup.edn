@@ -37,7 +37,7 @@ Use the following command to spin your project and assemble its contents into th
 silk spin --directory ~/path/to/silk-example
 ```
 
-To spin automatically on file chagnes use the `--auto` option like so
+To spin automatically on file changes use the `--auto` option
 ```
 silk spin --auto --directory ~/path/to/silk-example
 ```"
