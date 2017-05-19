@@ -1,7 +1,6 @@
 {
   :id "sources"
   :#id "#sources"
-  :priority 5
   :title "Sources"
   :title-blurb "Add blog, news or photo updates without touching mark-up"
   :text-md "
@@ -43,35 +42,14 @@ Below is a single news item, in [EDN Format](https://github.com/edn-format/edn),
  :images [{:path \"resources/img/1.jpg\" :tooltip \"Picture 1\"}
           {:path \"resources/img/2.jpg\" :tooltip \"Picture 2\"}]}```
 
-A source could also be a directory tree like so.
+Attributes `data-sw-when` and `data-sw-when-not` can be used handle optional values. The following will display in a link anchor if `link-path` is present or empty otherwise just as text.
 
 ```prettyprint
-data/
-└── my-source/
-    ├── sub-1/
-    │   └── item1.edn
-    └── sub-2/
-        ├── item1.edn
-        └── item2.edn```
-
-Use special attribute value `sw/contents` to access each directory and `sw/name` for the file/folder name.
-
-```prettyprint
-<ul data-sw-source=\"my-source\">
-  <li>
-    <span data-sw-text=\"sw/name\"></span>
-    <ul>
-      <li>
-        <span data-sw-text=\"sw/contents.sw/name\"></span>
-        <ul>
-          <li>
-            <a data-sw-href=\"sw/contents.sw/contents.sw/path\"
-               data-sw-text=\"sw/contents.sw/contents.title\">
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>```"
+<div data-sw-when=\"link-path\">
+  <a data-sw-href=\"link-path\" data-sw-text=\"link-title\" />
+</div>
+<div data-sw-when-not=\"link-path\">
+  <span data-sw-text=\"link-title\" />
+</div>
+```"
 }

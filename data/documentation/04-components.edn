@@ -1,7 +1,6 @@
 {
   :id "components"
   :#id "#components"
-  :priority 4
   :title "Components"
   :title-blurb "Contain reusable mark-up"
   :text-md "

@@ -1,7 +1,6 @@
 {
-  :id "tipue_search_support"
-  :#id "#tipue_search_support"
-  :priority 8
+  :id "tipue-search-support"
+  :#id "#tipue-search-support"
   :title "Tipue Search Support"
   :title-blurb "Control your searchable content dynamically"
   :text-md "

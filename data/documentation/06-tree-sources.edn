@@ -1,0 +1,38 @@
+{
+  :id "tree-sources"
+  :#id "#tree-sources"
+  :title "Tree Source"
+  :title-blurb "add hierarchical data such as family trees"
+  :text-md "
+A source could also be a directory tree like so.
+
+```prettyprint
+data/
+└── my-source/
+    ├── sub-1/
+    │   └── item1.edn
+    └── sub-2/
+        ├── item1.edn
+        └── item2.edn```
+
+Use special attribute value `sw/contents` to access each directory and `sw/name` for the file/folder name.
+
+```prettyprint
+<ul data-sw-source=\"my-source\">
+  <li>
+    <span data-sw-text=\"sw/name\"></span>
+    <ul>
+      <li>
+        <span data-sw-text=\"sw/contents.sw/name\"></span>
+        <ul>
+          <li>
+            <a data-sw-href=\"sw/contents.sw/contents.sw/path\"
+               data-sw-text=\"sw/contents.sw/contents.title\">
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>```"
+}

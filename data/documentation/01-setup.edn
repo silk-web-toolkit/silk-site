@@ -1,0 +1,15 @@
+{
+  :id "setup"
+  :#id "#setup"
+  :title "Setup"
+  :title-blurb "Lets get you up and running with the Silk Web Toolkit"
+  :text-md "### Linux
+* Install using the latest [RPM or DEB](https://github.com/silk-web-toolkit/silk/releases/latest) file
+* Download and unzip an [example](examples.html \"example Silk site\")
+* in a terminal type `silk spin -d ~/path/to/silk-example`
+* the pieces of your site (described below) will be assmebled and placed in a `site` directory
+* open your site from the terminal with `firefox ~/path/to/silk-example/site/myfile.html`
+* `silk sites` will display a list of all your Silk sites with the last spun time
+* `silk spin -ad ~/path/to/silk-example` will automatically assemble your site on modification
+* `silk` will display all command line options"
+}

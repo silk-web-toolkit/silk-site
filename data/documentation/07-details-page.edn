@@ -1,7 +1,6 @@
 {
   :id "details-page"
   :#id "#details-page"
-  :priority 6
   :title "Details Page"
   :title-blurb "A dedicated page per source item"
   :text-md "

@@ -1,7 +1,6 @@
 {
   :id "navigation"
   :#id "#navigation"
-  :priority 7
   :title "Navigation"
   :title-blurb "Generate site menu's from data driven components"
   :text-md "
