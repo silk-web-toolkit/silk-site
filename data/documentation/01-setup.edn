@@ -3,13 +3,42 @@
   :#id "#setup"
   :title "Setup"
   :title-blurb "Lets get you up and running with the Silk Web Toolkit"
-  :text-md "### Linux
-* Install using the latest [RPM or DEB](https://github.com/silk-web-toolkit/silk/releases/latest) file
-* Download and unzip an [example](examples.html \"example Silk site\")
-* in a terminal type `silk spin -d ~/path/to/silk-example`
-* the pieces of your site (described below) will be assmebled and placed in a `site` directory
-* open your site from the terminal with `firefox ~/path/to/silk-example/site/myfile.html`
-* `silk sites` will display a list of all your Silk sites with the last spun time
-* `silk spin -ad ~/path/to/silk-example` will automatically assemble your site on modification
-* `silk` will display all command line options"
+  :text-md "
+Navigate to the [latest release on GitHub](https://github.com/silk-web-toolkit/silk/releases/latest)
+* for Linux download the relevant platform file (`.deb` or `.rpm`)
+* for Mac download the `.tgz` and unpack it in a directory on you classpath E.G. `~/bin`
+* for Windows download the JAR file and use a progam like [launch4j](http://launch4j.sourceforge.net) to convert it into an executable
+
+Download a Silk [example](examples.html \"example Silk site\") project and unzip it. Projects are structured like so.
+```
+├── components
+│   ├── footer.html
+│   ├── header.html
+│   └── site-name.html
+├── data
+│   └── news
+│       ├── item1.edn
+│       └── item2.edn
+├── meta
+├── resource
+│   └── css
+│       └──style.css
+├── site
+├── template
+│   └── default.html
+└── view
+    ├── index.html
+    └── readme.txt```
+
+In a terminal type `silk` for a full list of command line options.
+
+Use the following command to spin your project and assemble its contents into the `site` directory
+```
+silk spin --directory ~/path/to/silk-example
+```
+
+To spin automatically on file chagnes use the `--auto` option like so
+```
+silk spin --auto --directory ~/path/to/silk-example
+```"
 }
