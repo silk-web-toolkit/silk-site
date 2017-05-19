@@ -126,6 +126,10 @@ section div.page-header {
   pointer-events: none;
 }
 
+.row {
+  padding-bottom: 20px;
+}
+
 /* Show and affix the side nav when space allows it */
 @media screen and (min-width: 992px) {
   /* Widen the fixed sidebar */
