@@ -130,6 +130,13 @@ section div.page-header {
   padding-bottom: 20px;
 }
 
+@media screen and (max-width: 450px) {
+  .jumbotron img {
+    max-width:100% !important;
+    max-height:100% !important;
+  }
+}
+
 /* Show and affix the side nav when space allows it */
 @media screen and (min-width: 992px) {
   /* Widen the fixed sidebar */
