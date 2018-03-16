@@ -5,15 +5,22 @@
  * sections of docs content.
  */
 
+body {
+  margin: 70px auto 0px auto;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
 /* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
+.bs-sidebar-affix {
   position: static;
   margin-top: 10px;
 }
 
 /* First level of nav */
 .bs-sidenav {
-  margin-top: 20px;
   margin-bottom: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -24,6 +31,7 @@
 /* All levels of nav */
 .bs-sidebar .nav > li > a {
   display: block;
+  outline: 0;
   color: #716b7a;
   padding: 5px 10px;
   word-wrap: auto;
@@ -36,14 +44,18 @@
   text-decoration: none;
   background-color: #e5e3e9;
   border-right: 1px solid #dbd8e0;
+  border-top: none;
+  border-bottom: none;
 }
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
+.bs-sidebar .nav > li > a.active,
+.bs-sidebar .nav > li > a.active:hover,
+.bs-sidebar .nav > li > a.active:focus {
   font-weight: bold;
   color: #563d7c;
   background-color: transparent;
   border-right: 1px solid #563d7c;
+  border-top: none !important;
+  border-bottom: none;
 }
 
 /* Nav: second level (shown on .active) */
@@ -64,11 +76,27 @@ pre {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  max-height: 400px;
+  padding: 1.5rem;
+  background-color: #f7f7f9;
 }
 
-ul, ol {
-  margin-bottom: 10px !important; /* For markdown pargraph, list, pargraph styling */
+.bd-clipboard {
+  position: relative;
+  float: right;
+}
+
+.btn-clipboard {
+  position: absolute;
+  top: .4rem;
+  right: .6rem;
+  z-index: 10;
+  display: block;
+  padding: .25rem .5rem;
+  font-size: 75%;
+  color: #818a91;
+  cursor: pointer;
+  background-color: #f7f7f9;
+  border-color: #f7f7f9;260
 }
 
 ol.nav, ul.nav {
@@ -79,37 +107,37 @@ ol.nav, ul.nav {
   margin-bottom: 0px !important;
 }
 
-ul, ol {
-  margin-bottom: 10px !important;
-}
-
-pre.text {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  border: 0px;
-  background-color: #fff;
-  margin: 0px;
-  padding: 2px;
-  max-height: 100%;
-}
-
 section div.page-header {
-  padding-top: 40px;
-  margin-top: -40px;
+  padding-top: 76px;
+  margin-top: -76px;
 }
 
 .example {
   float: left;
   width: 350px;
   margin: 20px;
-  height: 400px;
+  height: 430px;
 }
 
-.wrap-screenshot {
+a.wrap-screenshot {
+  display:block;
   height: 320px;
   padding: 0;
   overflow: hidden;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  opacity: 0.75;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
 }
+
+a.wrap-screenshot:hover,
+a.wrap-screenshot:focus {
+  border-color: #0056b3;
+  opacity: 1;
+}
+
 
 .screenshot {
   width: 1000px;
@@ -130,7 +158,7 @@ section div.page-header {
   padding-bottom: 20px;
 }
 
-@media screen and (max-width: 450px) {
+-@media screen and (max-width: 450px) {
   .jumbotron img {
     max-width:100% !important;
     max-height:100% !important;
@@ -140,22 +168,18 @@ section div.page-header {
 /* Show and affix the side nav when space allows it */
 @media screen and (min-width: 992px) {
   /* Widen the fixed sidebar */
-  .bs-sidebar.affix,
-  .bs-sidebar.affix-bottom {
+  .bs-sidebar-affix {
     width: inherit;
     padding-left: 0px;
     padding-right: 30px;
     width: 25%;
   }
-  .bs-sidebar.affix {
+  .bs-sidebar-affix {
     position: fixed;
-    top: 30px;
-  }
-  .bs-sidebar.affix-bottom {
-    position: relative;;
+    top: 60px;
   }
   .bs-sidenav {
-    max-height: 90vh;
+    max-height: 91vh;
     overflow-y: auto;
   }
 }
@@ -165,8 +189,7 @@ section div.page-header {
     width: 1170px;
   }
   /* Widen the fixed sidebar */
-  .bs-sidebar.affix,
-  .bs-sidebar.affix-bottom {
+  .bs-sidebar-affix {
     width: 293px;
   }
 }

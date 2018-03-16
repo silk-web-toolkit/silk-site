@@ -9,10 +9,10 @@
  * http://code.google.com/p/google-code-prettify/source/browse/trunk/src/prettify.css
  */
 .pln {
-  color: #48484C; }
+  color: #212529; }
 
 .str {
-  color: #DD1144; }
+  color: #d44950; }
 
 .kwd {
   color: #1E347B; }
@@ -21,7 +21,7 @@
   color: #93A1A1; }
 
 .typ {
-  color: teal; }
+  color: #4f9fcf; }
 
 .lit {
   color: #195F91; }
@@ -36,19 +36,19 @@
   color: #93A1A1; }
 
 .tag {
-  color: #008; }
+  color: #2f6f9f;; }
 
 .atn {
-  color: teal; }
+  color: #4f9fcf; }
 
 .atv {
-  color: #DD1144; }
+  color: #d44950; }
 
 .dec {
-  color: teal; }
+  color: #4f9fcf; }
 
 .var {
-  color: teal; }
+  color: #4f9fcf; }
 
 .fun {
   color: #DC322F; }
