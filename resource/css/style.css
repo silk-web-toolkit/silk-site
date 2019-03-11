@@ -107,9 +107,14 @@ ol.nav, ul.nav {
   margin-bottom: 0px !important;
 }
 
+/* Make bottom nav link accessible - page-header overlaps on small screens */
+div.col-lg-3 {
+  z-index: 2;
+}
+
 section div.page-header {
-  padding-top: 76px;
-  margin-top: -76px;
+  padding-top: 68px;
+  margin-top: -68px;
 }
 
 .example {
