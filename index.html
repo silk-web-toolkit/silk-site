@@ -1,0 +1,164 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="description" content="Silk Web Toolkit">
+    <meta name="author" content="Silk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+  Silk Web Toolkit
+
+
+</title>
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap-prettify.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/tipuesearch.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+    <script type="text/javascript" src="resource/js/jquery.min.js"></script>
+    <script type="text/javascript" src="resource/js/proper.min.js"></script>
+    <script type="text/javascript" src="resource/js/tipuesearch_content.js"></script>
+    <script type="text/javascript" src="resource/js/tipuesearch.min.js"></script>
+    <script type="text/javascript" src="resource/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resource/js/prettify/prettify.js"></script>
+  </head>
+  <body onload="prettyPrint();">
+    <div>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+  Silk Web Toolkit
+
+
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul id="header-page-links" class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="documentation.html">
+                <span>Documentation</span>
+              </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="examples.html">
+                <span>Examples</span>
+              </a>
+            </li>
+          </ul>
+          <form action="search.html" class="form-inline mt-2 mt-md-0" role="search">
+            <input placeholder="Search" name="q" type="text" title="At least 3 characters" id="tipue_search_input" class="form-control mr-sm-2" autofocus="" autocomplete="off" aria-label="Search" required="" pattern=".{3,}">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <script>
+      $(document).ready(function() {
+         var pathname = window.location.pathname;
+         if (pathname.endsWith("/")) {
+           pathname = pathname + "index.html"
+         }
+
+         $('#header-page-links li').each(function() {
+           var li = $(this);
+           var a = li.find("a:first");
+           if (pathname.endsWith("/" + a.attr('href'))) {
+             li.addClass('active');
+           }
+         });
+      });
+    </script>
+  
+
+</div>
+    <div class="container-fluid">
+      <div data-sw-view="">
+    <div class="jumbotron">
+      <img src="resource/img/silk-blue.png" alt="silk logo">
+      <p>Build websites with reusable components written in pure HTML5.</p>
+      <p>Add blog, news or photo updates without touching presentation/template mark-up.</p>
+      <p>
+        <a href="https://github.com/silk-web-toolkit/silk/releases/latest" target="_blank" class="btn btn-primary btn-lg">
+          Download <span>
+  Silk Web Toolkit
+
+
+</span>
+        </a>
+      </p>
+    </div>
+    <div class="text-center">
+      <p>
+        <a target="blank" class="btn btn-secondary" href="https://github.com/silk-web-toolkit/silk">Github</a>
+        <a target="blank" class="btn btn-secondary" href="http://groups.google.com/group/silk-user">Mailing List</a>
+      </p>
+    </div>
+  
+
+</div>
+      <div>
+    <hr>
+    <footer>
+      <div class="float-right">
+        <img src="resource/img/spun-with-silk.png" alt="spun with Silk">
+        <div>
+          <span><p><a href="https://clojars.org/org.silkyweb/silk"><img src="https://img.shields.io/clojars/v/org.silkyweb/silk.svg" alt="Clojars Project"></a></p></span>
+        </div>
+      </div>
+      <p>Code licensed under the
+        <a target="blank" href="http://www.apache.org/licenses/LICENSE-2.0">
+          Apache License v2.0
+        </a>.
+      </p><p>
+      </p><p>Documentation licensed under
+        <a target="blank" href="http://creativecommons.org/licenses/by/3.0/">
+          CC BY 3.0
+        </a>.
+      </p>
+    </footer>
+  
+
+</div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31214840-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+      });
+
+      [].forEach.call(document.querySelectorAll('pre'), function(snippet) {
+        snippet.insertAdjacentHTML(
+          'beforebegin',
+          '<div class="bd-clipboard">' +
+            '<button class="btn btn-primary btn-sm btn-clipboard" data-clipboard-snippet data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Copied!">' +
+              'Copy' +
+            '</button>' +
+          '</div>'
+        );
+      });
+
+      var clipboardSnippets = new ClipboardJS('[data-clipboard-snippet]', {
+        target: function(trigger) {
+          return trigger.parentNode.nextElementSibling;
+        }
+      });
+      clipboardSnippets.on('success', function(e) {
+        e.clearSelection();
+      });
+      clipboardSnippets.on('error', function(e) {
+        alert("An error occurred while copying to clipboard.");
+      });
+    </script>
+  
+
+</body></html>

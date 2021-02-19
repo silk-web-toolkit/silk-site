@@ -1,0 +1,469 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="description" content="Silk Web Toolkit">
+    <meta name="author" content="Silk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+  Silk Web Toolkit
+
+
+</title>
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap-prettify.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/tipuesearch.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/style.css">
+    <script type="text/javascript" src="resource/js/jquery.min.js"></script>
+    <script type="text/javascript" src="resource/js/proper.min.js"></script>
+    <script type="text/javascript" src="resource/js/tipuesearch_content.js"></script>
+    <script type="text/javascript" src="resource/js/tipuesearch.min.js"></script>
+    <script type="text/javascript" src="resource/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resource/js/prettify/prettify.js"></script>
+  </head>
+  <body onload="prettyPrint();">
+    <div>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+  Silk Web Toolkit
+
+
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul id="header-page-links" class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="documentation.html">
+                <span>Documentation</span>
+              </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="examples.html">
+                <span>Examples</span>
+              </a>
+            </li>
+          </ul>
+          <form action="search.html" class="form-inline mt-2 mt-md-0" role="search">
+            <input placeholder="Search" name="q" type="text" title="At least 3 characters" id="tipue_search_input" class="form-control mr-sm-2" autofocus="" autocomplete="off" aria-label="Search" required="" pattern=".{3,}">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <script>
+      $(document).ready(function() {
+         var pathname = window.location.pathname;
+         if (pathname.endsWith("/")) {
+           pathname = pathname + "index.html"
+         }
+
+         $('#header-page-links li').each(function() {
+           var li = $(this);
+           var a = li.find("a:first");
+           if (pathname.endsWith("/" + a.attr('href'))) {
+             li.addClass('active');
+           }
+         });
+      });
+    </script>
+  
+
+</div>
+    <div class="container-fluid">
+      <div data-sw-view="">
+    <div class="jumbotron">
+      <h1>Documentation</h1>
+      <p>Lets get you up and running with your first site.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div>
+  <div class="bs-sidebar" role="complementary">
+    <nav id="menu" class="bs-sidenav">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#setup">Setup</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#templates">Templates</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#views">Views</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#components">Components</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#sources">Sources</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#tree-sources">Tree Source</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#details-page">Details Page</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#navigation">Navigation</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="#tipue-search-support">Tipue Search Support</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    $(document).ready(function(){
+      var $window   = $(window);
+      var $body     = $(document.body);
+      var navHeight = $('.navbar').outerHeight(true);
+
+      function affix() {
+        if ($window.scrollTop() >= 250) {
+          $('.bs-sidebar').addClass('bs-sidebar-affix');
+          if ($window.width() > 980) {
+            $('.active').focus();
+          }
+        } else {
+          $('.bs-sidebar').removeClass('bs-sidebar-affix');
+          $('.form-control').focus();
+        }
+      }
+
+      $body.scrollspy({
+        target: '.bs-sidebar',
+        offset: navHeight
+      });
+
+      affix();
+      $window.on('scroll', function(event) {
+        affix();
+      });
+    });
+  </script>
+
+
+</div>
+      </div>
+      <div class="col-lg-9" role="main">
+        <ul class="list-unstyled">
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Setup" id="setup">
+              <div class="page-header">
+                <h2>
+                  <span>Setup</span>
+                  <small class="text-muted">Lets get you up and running with the Silk Web Toolkit</small>
+                </h2>
+              </div>
+              <div><p>Navigate to the <a href="https://github.com/silk-web-toolkit/silk/releases/latest">latest release on GitHub</a></p><ul><li>for Linux download the relevant platform file (<code>.deb</code> or <code>.rpm</code>)</li><li>for Mac download the <code>.tgz</code> and unpack it in a directory on you classpath E.G. <code>~/bin</code></li><li>for Windows download the JAR file and use a progam like <a href="http://launch4j.sourceforge.net">launch4j</a> to convert it into an executable</li></ul><p>Download a Silk <a href="examples.html" title="example Silk site">example</a> project and unzip it. Projects are structured like so.</p><pre><code>├── components
+│   ├── footer.html
+│   ├── header.html
+│   └── site-name.html
+├── data
+│   └── news
+│       ├── item1.edn
+│       └── item2.edn
+├── meta
+├── resource
+│   └── css
+│       └──style.css
+├── site
+├── template
+│   └── default.html
+└── view
+    ├── index.html
+    └── readme.txt</code></pre><p>In a terminal type <code>silk</code> for a full list of command line options.</p><p>Use the following command to spin your project and assemble its contents into the <code>site</code> directory</p><pre><code>silk spin --directory ~/path/to/silk-example
+</code></pre><p>To spin automatically on file changes use the <code>--auto</code> option</p><pre><code>silk spin --auto --directory ~/path/to/silk-example
+</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Templates" id="templates">
+              <div class="page-header">
+                <h2>
+                  <span>Templates</span>
+                  <small class="text-muted">Get the same look and feel across all your pages</small>
+                </h2>
+              </div>
+              <div><p>Add a <code>data-sw-view</code> attribute to a <code>&lt;div&gt;</code> tag, to specify where your views are inserted into your templates.</p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Sample Site&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;My Sample Site&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div data-sw-view=&quot;&quot;&gt;
+      Placedholder for view
+    &lt;/div&gt;
+    &lt;footer&gt;
+      &lt;hr&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Views" id="views">
+              <div class="page-header">
+                <h2>
+                  <span>Views</span>
+                  <small class="text-muted">The epicentre of your site, organise your content</small>
+                </h2>
+              </div>
+              <div><p>  Out of the box a view will look for a template called &quot;default&quot;. You can override this by providing an optional <code>&lt;meta&gt;</code> tag, see below.</p><p>  The template title can be overriden by providing an optional title element in the same place.</p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Title&lt;/title&gt;
+    &lt;meta name=&quot;template&quot; content=&quot;example-template&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;p&gt;This is the content for the view&lt;p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Components" id="components">
+              <div class="page-header">
+                <h2>
+                  <span>Components</span>
+                  <small class="text-muted">Contain reusable mark-up</small>
+                </h2>
+              </div>
+              <div><p>Simple components enable re-use of structural or semantic mark-up.</p><p>Component mark up must be placed into the components directory. Everything inside the <code>&lt;body&gt;</code> tag is injected into the caller. The component's name is its file-name minus extension.</p><p>An example of a simple component is given below.</p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;body&gt;
+    &lt;span&gt;
+      My Sample Site
+    &lt;/span&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>Call the component from a template, view or another component with the following mark-up.</p><pre><code class="prettyprint">&lt;span data-sw-component=&quot;site-name&quot; /&gt;
+</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Sources" id="sources">
+              <div class="page-header">
+                <h2>
+                  <span>Sources</span>
+                  <small class="text-muted">Add blog, news or photo updates without touching mark-up</small>
+                </h2>
+              </div>
+              <div><p>A source is a collection of articles, for example news stories or blog posts. Source related attributes include;</p><ul><li><code>data-sw-source</code> (required: location)</li><li><code>data-sw-sort</code> (optional: key on items to sort on)</li><li><code>data-sw-sort-dir</code> (optional: specify ascending or descending)</li><li><code>data-sw-limit</code> (optional: limit the number of items)</li></ul><p>The following will gather articles from <code>data/news</code> (a directory called news under the data directory on disk) and inject each into an HTML list (<code>&lt;ul&gt; &lt;ol&gt; &lt;tbody&gt;</code>)</p><pre><code class="prettyprint">&lt;ul data-sw-source=&quot;news&quot;&gt;
+  &lt;li&gt;
+    &lt;h2 data-sw-text=&quot;title&quot;&gt;&lt;/h2&gt;
+    &lt;div data-sw-text=&quot;description&quot;&gt;&lt;/div&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;img data-sw-src=&quot;images/path&quot; data-sw-alt=&quot;images/tooltip&quot; /&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>A source can also be injected into a component like so.</p><pre><code class="prettyprint">&lt;div data-sw-component=&quot;my-news&quot; data-sw-source=&quot;news&quot; /&gt;
+</code></pre><p>Below is a single news item, in <a href="https://github.com/edn-format/edn">EDN Format</a>, containing all the mentioned keys. Appending the keys with <code>-html</code> or <code>-md</code> would allow rich injection of HTML or Markdown respectively.</p><p><label>File:</label> <kbd>data/news/item1.edn</kbd></p><pre><code class="prettyprint">{:title &quot;Lorem ipsum&quot;
+ :description &quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ...&quot;
+ :images [{:path &quot;resources/img/1.jpg&quot; :tooltip &quot;Picture 1&quot;}
+          {:path &quot;resources/img/2.jpg&quot; :tooltip &quot;Picture 2&quot;}]}</code></pre><p>Attributes <code>data-sw-when</code> and <code>data-sw-when-not</code> can be used to handle optional values. The following will display a link when <code>link-path</code> is present and a span if it isn't .</p><pre><code class="prettyprint">&lt;div data-sw-when=&quot;link-path&quot;&gt;
+  &lt;a data-sw-href=&quot;link-path&quot; data-sw-text=&quot;link-title&quot; /&gt;
+&lt;/div&gt;
+&lt;div data-sw-when-not=&quot;link-path&quot;&gt;
+  &lt;span data-sw-text=&quot;link-title&quot; /&gt;
+&lt;/div&gt;
+</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Tree Source" id="tree-sources">
+              <div class="page-header">
+                <h2>
+                  <span>Tree Source</span>
+                  <small class="text-muted">add hierarchical data such as family trees</small>
+                </h2>
+              </div>
+              <div><p>A source could also be a directory tree like so.</p><pre><code class="prettyprint">data/
+└── my-source/
+    ├── sub-1/
+    │   └── item1.edn
+    └── sub-2/
+        ├── item1.edn
+        └── item2.edn</code></pre><p>Use special attribute value <code>sw/contents</code> to access each directory and <code>sw/name</code> for the file/folder name.</p><pre><code class="prettyprint">&lt;ul data-sw-source=&quot;my-source&quot;&gt;
+  &lt;li&gt;
+    &lt;span data-sw-text=&quot;sw/name&quot;&gt;&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;span data-sw-text=&quot;sw/contents.sw/name&quot;&gt;&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;a data-sw-href=&quot;sw/contents.sw/contents.sw/path&quot;
+               data-sw-text=&quot;sw/contents.sw/contents.title&quot;&gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Details Page" id="details-page">
+              <div class="page-header">
+                <h2>
+                  <span>Details Page</span>
+                  <small class="text-muted">A dedicated page per source item</small>
+                </h2>
+              </div>
+              <div><p>A details page is a dedicated template for rendering whole articles belonging to a specific source. For source <code>data/news</code>, if the file below is created, each news article will have it's own dedicated details page.</p><p><label>File:</label> <kbd>template/detail/news.html</kbd></p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;body&gt;
+    &lt;h2 data-sw-text=&quot;title&quot;&gt;&lt;/h2&gt;
+    &lt;div data-sw-text=&quot;further-details&quot;&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>Link to a details page using the special attribute value <code>sw/path</code> as demonstrated below.</p><pre><code class="prettyprint">&lt;ul data-sw-source=&quot;news&quot;/&gt;
+  &lt;li&gt;
+    &lt;a data-sw-href=&quot;sw/path&quot; href=&quot;#&quot;&gt;Click here for further details&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Navigation" id="navigation">
+              <div class="page-header">
+                <h2>
+                  <span>Navigation</span>
+                  <small class="text-muted">Generate site menu's from data driven components</small>
+                </h2>
+              </div>
+              <div><p>The Silk Web Toolkit offers two forms of navigation, <code>views</code> and <code>bookmarks</code>. View navigation caters for site hierarchy. Bookmark navigation for sections inside a view. The data generated for navigation can be found here: <kbd>~/.silk/sw</kbd> after each spin.</p><h3>View Nav</h3><p>Data for view navigation is generated by including the <code>data-sw-nav</code> attribute in a view's <code>body</code> tag. Views can be sorted by the <code>data-sw-priority</code> attribute. Below is an example of how <code>views/index.html</code> could be added.</p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;body data-sw-nav=&quot;Home&quot; data-sw-priority=&quot;1&quot;&gt;
+    &lt;div&gt;
+      &lt;p&gt;This is the content for the view&lt;p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;html&gt;</code></pre><p>This menu could be included into your site's template.</p><pre><code class="prettyprint">&lt;ul data-sw-source=&quot;sw/views&quot; data-sw-sort=&quot;priority&quot; data-sw-sort-dir=&quot;ascending&quot;&gt;
+  &lt;li&gt;
+    &lt;a data-sw-href=&quot;path&quot; data-sw-text=&quot;title&quot;&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre><h3>Bookmark Nav</h3><p>Data for page bookmarks is generated by placing the <code>data-sw-nav</code> attribute into the same tag which contains the bookmark <code>id</code>.</p><pre><code class="prettyprint">&lt;section data-sw-nav=&quot;Section 1&quot; id=&quot;sec1&quot;&gt;
+  &lt;h2&gt;Section 1&lt;/h2&gt;
+  &lt;p&gt;
+    This is the content for the section 1
+  &lt;/p&gt;
+&lt;/section&gt;</code></pre><p>The menu for <code>index.html</code> would be included in the view as follows.</p><pre><code class="prettyprint">&lt;ul data-sw-source=&quot;sw/bookmarks/index&quot; data-sw-sort=&quot;priority&quot; data-sw-sort-dir=&quot;ascending&quot;&gt;
+  &lt;li&gt;
+    &lt;a data-sw-href=&quot;path&quot; data-sw-text=&quot;title&quot;&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            </section>
+          </li>
+        
+          <li>
+            <section data-sw-search-content="" data-sw-nav="Tipue Search Support" id="tipue-search-support">
+              <div class="page-header">
+                <h2>
+                  <span>Tipue Search Support</span>
+                  <small class="text-muted">Control your searchable content dynamically</small>
+                </h2>
+              </div>
+              <div><p>We recommend you look at <a href="http://www.tipue.com/search/">Tipue Search</a>, an open source <a href="http://jquery.com/">JQuery</a> search engine, along with our <a href="examples.html">Blog example</a>. This search engine has two modes &quot;Live&quot; and &quot;JSON&quot;.</p><p>&quot;Live&quot; automatically indexes your site but due to the <a href="http://en.wikipedia.org/wiki/Same-origin_policy">Same Origin Policy</a> it requires your site to be on the web (live) for it to work.</p><p>&quot;JSON&quot; mode requires a JavaScript file with search terms to be maintained.</p><p>By adding attribute <code>data-sw-search-content</code> to your markup the Silk Web Toolkit will allow you to include a JavaScript file (<code>resource/js/tipuesearch_content.js</code>) which contains the &quot;JSON&quot; search terms. The <code>data-sw-search-content</code> attribute can be added to Templates, Views, Components and Details Pages. Navigation attributes are used to gather titles and links for your searchable contents.</p><p>Below is an example of how to include multiple searchable sections to a page with bookmark navigation.</p><pre><code class="prettyprint">&lt;html&gt;
+  &lt;body data-sw-nav=&quot;Documentation&quot; data-sw-priority=&quot;2&quot; &gt;
+    &lt;section data-sw-nav=&quot;Section 1&quot; id=&quot;sec1&quot; data-sw-search-content&gt;
+      &lt;p&gt;Some searchable content.&lt;/p&gt;
+      &lt;p&gt;Some more.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section data-sw-nav=&quot;Section 2&quot; id=&quot;sec2&quot; data-sw-search-content&gt;
+      &lt;p&gt;Some searchable content.&lt;/p&gt;
+      &lt;p&gt;Some more.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+            </section>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+
+</div>
+      <div>
+    <hr>
+    <footer>
+      <div class="float-right">
+        <img src="resource/img/spun-with-silk.png" alt="spun with Silk">
+        <div>
+          <span><p><a href="https://clojars.org/org.silkyweb/silk"><img src="https://img.shields.io/clojars/v/org.silkyweb/silk.svg" alt="Clojars Project"></a></p></span>
+        </div>
+      </div>
+      <p>Code licensed under the
+        <a target="blank" href="http://www.apache.org/licenses/LICENSE-2.0">
+          Apache License v2.0
+        </a>.
+      </p><p>
+      </p><p>Documentation licensed under
+        <a target="blank" href="http://creativecommons.org/licenses/by/3.0/">
+          CC BY 3.0
+        </a>.
+      </p>
+    </footer>
+  
+
+</div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31214840-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+      });
+
+      [].forEach.call(document.querySelectorAll('pre'), function(snippet) {
+        snippet.insertAdjacentHTML(
+          'beforebegin',
+          '<div class="bd-clipboard">' +
+            '<button class="btn btn-primary btn-sm btn-clipboard" data-clipboard-snippet data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Copied!">' +
+              'Copy' +
+            '</button>' +
+          '</div>'
+        );
+      });
+
+      var clipboardSnippets = new ClipboardJS('[data-clipboard-snippet]', {
+        target: function(trigger) {
+          return trigger.parentNode.nextElementSibling;
+        }
+      });
+      clipboardSnippets.on('success', function(e) {
+        e.clearSelection();
+      });
+      clipboardSnippets.on('error', function(e) {
+        alert("An error occurred while copying to clipboard.");
+      });
+    </script>
+  
+
+</body></html>
