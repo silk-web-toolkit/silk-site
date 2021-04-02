@@ -1,6 +1,6 @@
 {
   :title "Silk Site"
   :details "Constructed from rich markdown data files and is fully searchable thanks to Tipue Search"
-  :url "http://silkyweb.org/"
+  :url "http://silk-web-toolkit.github.io/silk-site"
   :zip "https://github.com/silk-web-toolkit/silk-site/archive/master.zip"
 }
